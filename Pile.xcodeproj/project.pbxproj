@@ -17,6 +17,8 @@
 		6118506D261AB1250092974A /* ChallengeProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6118506B261AB1250092974A /* ChallengeProgress.storyboard */; };
 		61185071261AB1A80092974A /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185070261AB1A80092974A /* Challenge.storyboard */; };
 		61185076261AB2AE0092974A /* WelcomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185075261AB2AE0092974A /* WelcomePage.storyboard */; };
+		B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */; };
+		B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6118506C261AB1250092974A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Pile/Module/Base.lproj/ChallengeProgress.storyboard; sourceTree = "<group>"; };
 		61185070261AB1A80092974A /* Challenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		61185075261AB2AE0092974A /* WelcomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomePage.storyboard; sourceTree = "<group>"; };
+		B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				61185066261AAFB40092974A /* Home.storyboard */,
+				B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */,
+				B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -227,7 +233,9 @@
 			files = (
 				61185046261AAB730092974A /* AppDelegate.swift in Sources */,
 				61185048261AAB730092974A /* SceneDelegate.swift in Sources */,
+				B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
+				B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
