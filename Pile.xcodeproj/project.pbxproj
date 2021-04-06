@@ -19,6 +19,14 @@
 		6118506D261AB1250092974A /* ChallengeProgress.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6118506B261AB1250092974A /* ChallengeProgress.storyboard */; };
 		61185071261AB1A80092974A /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185070261AB1A80092974A /* Challenge.storyboard */; };
 		61185076261AB2AE0092974A /* WelcomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185075261AB2AE0092974A /* WelcomePage.storyboard */; };
+		6E1E0D9B261AF0CF00AFEC13 /* Why.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0D9A261AF0CF00AFEC13 /* Why.swift */; };
+		6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */; };
+		6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */; };
+		6EC4125F261AE8040055DB27 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4125E261AE8040055DB27 /* User.swift */; };
+		6EC41262261AE9770055DB27 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41261261AE9770055DB27 /* Challenge.swift */; };
+		6EC41265261AEA850055DB27 /* How.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41264261AEA850055DB27 /* How.swift */; };
+		6EC41268261AEACB0055DB27 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41267261AEACB0055DB27 /* Status.swift */; };
+		6EC4126B261AEB420055DB27 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4126A261AEB420055DB27 /* Challenges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +44,14 @@
 		6118506C261AB1250092974A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Pile/Module/Base.lproj/ChallengeProgress.storyboard; sourceTree = "<group>"; };
 		61185070261AB1A80092974A /* Challenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		61185075261AB2AE0092974A /* WelcomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomePage.storyboard; sourceTree = "<group>"; };
+		6E1E0D9A261AF0CF00AFEC13 /* Why.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Why.swift; sourceTree = "<group>"; };
+		6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
+		6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		6EC4125E261AE8040055DB27 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6EC41261261AE9770055DB27 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		6EC41264261AEA850055DB27 /* How.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How.swift; sourceTree = "<group>"; };
+		6EC41267261AEACB0055DB27 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		6EC4126A261AEB420055DB27 /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +84,7 @@
 		61185044261AAB730092974A /* Pile */ = {
 			isa = PBXGroup;
 			children = (
+				6EC4125D261AE7E10055DB27 /* Model */,
 				61185060261AAD4C0092974A /* App */,
 				6118505D261AAC220092974A /* Module */,
 				61185062261AAD8D0092974A /* Intro */,
@@ -153,8 +170,23 @@
 			isa = PBXGroup;
 			children = (
 				61185070261AB1A80092974A /* Challenge.storyboard */,
+				6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */,
+				6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */,
 			);
 			path = Challenge;
+			sourceTree = "<group>";
+		};
+		6EC4125D261AE7E10055DB27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EC4125E261AE8040055DB27 /* User.swift */,
+				6EC41261261AE9770055DB27 /* Challenge.swift */,
+				6EC41264261AEA850055DB27 /* How.swift */,
+				6EC41267261AEACB0055DB27 /* Status.swift */,
+				6EC4126A261AEB420055DB27 /* Challenges.swift */,
+				6E1E0D9A261AF0CF00AFEC13 /* Why.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +263,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */,
+				6E1E0D9B261AF0CF00AFEC13 /* Why.swift in Sources */,
+				6EC4125F261AE8040055DB27 /* User.swift in Sources */,
+				6EC4126B261AEB420055DB27 /* Challenges.swift in Sources */,
 				61185046261AAB730092974A /* AppDelegate.swift in Sources */,
+				6EC41268261AEACB0055DB27 /* Status.swift in Sources */,
+				6EC41265261AEA850055DB27 /* How.swift in Sources */,
 				61185048261AAB730092974A /* SceneDelegate.swift in Sources */,
 				217B0AD3261B5050002757CD /* alertActionViewController.swift in Sources */,
 				215A2130261B076600B80028 /* WelcomePageViewController.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
+				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
+				6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
