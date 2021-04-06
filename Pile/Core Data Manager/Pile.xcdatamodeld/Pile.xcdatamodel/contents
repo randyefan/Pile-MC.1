@@ -1,4 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D80" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Challenge" representedClassName="Challenge" syncable="YES">
+        <attribute name="challengeId" attributeType="String"/>
+        <attribute name="descriptionChallenge" attributeType="String"/>
+        <attribute name="iconChallenge" attributeType="String"/>
+        <attribute name="nama" attributeType="String"/>
+        <attribute name="penalty" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pointReward" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnail" attributeType="String"/>
+        <attribute name="why" attributeType="String"/>
+        <relationship name="how" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="How" inverseName="challenge" inverseEntity="How"/>
+        <relationship name="status" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Status" inverseName="challenge" inverseEntity="Status"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="challenge" inverseEntity="User"/>
+    </entity>
+    <entity name="How" representedClassName="How" syncable="YES">
+        <attribute name="caption" attributeType="String"/>
+        <attribute name="icon" attributeType="String"/>
+        <relationship name="challenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenge" inverseName="how" inverseEntity="Challenge"/>
+    </entity>
+    <entity name="Status" representedClassName="Status" syncable="YES">
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="challenge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Challenge" inverseName="status" inverseEntity="Challenge"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <attribute name="points" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="challenge" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Challenge" inverseName="user" inverseEntity="Challenge"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="74"/>
+        <element name="How" positionX="-54" positionY="9" width="128" height="74"/>
+        <element name="Status" positionX="-36" positionY="27" width="128" height="74"/>
+        <element name="Challenge" positionX="-18" positionY="45" width="128" height="194"/>
+    </elements>
 </model>
