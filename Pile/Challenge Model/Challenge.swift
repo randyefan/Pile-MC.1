@@ -28,6 +28,11 @@ struct WhyGenerate {
     var detailGenerate: String
 }
 
+struct DailyChallenges {
+    var challenges: Challenge
+    var status: Status
+}
+
 struct Challenges {
     var data = [
         ChallengeGenerate(
