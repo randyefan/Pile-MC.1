@@ -1,0 +1,9 @@
+# Xcode
+IDEWorkspaceChecks.plist
+xcschemes/xcschememanagement.plist
+MamiKos/MamiKos.xcodeproj/xcuserdata
+MamiKos/MamiKos.xcworkspace/xcuserdata
+MamiKos/Pods/Pods.xcodeproj/xcuserdata
+
+# Miscellaneous
+\.DS_Store
