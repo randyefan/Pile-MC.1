@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215A2130261B076600B80028 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A212F261B076600B80028 /* WelcomePageViewController.swift */; };
+		217B0AD3261B5050002757CD /* alertActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217B0AD2261B5050002757CD /* alertActionViewController.swift */; };
 		61185046261AAB730092974A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61185045261AAB730092974A /* AppDelegate.swift */; };
 		61185048261AAB730092974A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61185047261AAB730092974A /* SceneDelegate.swift */; };
 		6118504D261AAB730092974A /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6118504B261AAB730092974A /* Root.storyboard */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		215A212F261B076600B80028 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
+		217B0AD2261B5050002757CD /* alertActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertActionViewController.swift; sourceTree = "<group>"; };
 		61185042261AAB730092974A /* Pile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61185045261AAB730092974A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61185047261AAB730092974A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				61185075261AB2AE0092974A /* WelcomePage.storyboard */,
+				215A212F261B076600B80028 /* WelcomePageViewController.swift */,
+				217B0AD2261B5050002757CD /* alertActionViewController.swift */,
 			);
 			path = "Welcome Page";
 			sourceTree = "<group>";
@@ -276,6 +282,8 @@
 				61195028261C88A10009DE71 /* User+CoreDataClass.swift in Sources */,
 				61195024261C88A10009DE71 /* Challenge+CoreDataClass.swift in Sources */,
 				61185048261AAB730092974A /* SceneDelegate.swift in Sources */,
+				217B0AD3261B5050002757CD /* alertActionViewController.swift in Sources */,
+				215A2130261B076600B80028 /* WelcomePageViewController.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
 				61195025261C88A10009DE71 /* Challenge+CoreDataProperties.swift in Sources */,
