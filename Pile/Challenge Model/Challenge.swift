@@ -259,7 +259,7 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Cabut semua listrik sebelum tidur."),
-                ],
+            ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -280,7 +280,7 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Masak makanan sendiri dan membawa menggunakan food countainer"),
-                ],
+            ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -310,7 +310,7 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Mulai zero waste lifestyle dari diri sendiri untuk bisa jadi contoh atau role model bagi orang-orang disekitar kita. Zero waste lifestyle juga menjadi salah satu upaya pencegahan climate change."),
-                ],
+            ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -345,14 +345,14 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Jangan takut gagal atau salah, karena proses kompos sama dengan bereksperimen hingga benar-benar tau cara kompos yang benar."),
-                ],
+            ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "15",
             iconChallengeGenerate: "",
             thumbnailChallengeGenerate: "",
-            namaChallengeGenerate: "Compost",
+            namaChallengeGenerate: "Habiskan Makananmu",
             descriptionGenerate: """
             Indonesia diperkirakan menghasilkan 64 juta ton sampah tiap tahunnya. Berdasarkan data Kementrian Lingkungan Hidup dan Kehutanan (KLHK), persentase jenis sampah yang dihasilkan didominasi oleh sampah organik, yaitu mencapai 60% dari total sampah. Diikuti oleh sampah plastik sebanyak 14%, sampah kertas 9%, metal 4,3%, kaca, kayu dan bahan lainnya 12,7%. Salah satu contoh sampah organik yaitu sisa-sisa makanan.
 
@@ -377,7 +377,7 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Walaupun masih berlebih saat dimakan sekali, olah kembali sisa makanan tersebut menjadi makanan lain agar tetap habis (jika mungkin untuk dilakukan)."),
-                ],
+            ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
     ]

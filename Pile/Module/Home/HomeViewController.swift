@@ -14,20 +14,27 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var totalEpText: UILabel!
     @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var taskListTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
-    
+
+
     @IBAction func addTaskAction(_ sender: Any) {
+        if let viewController = storyboard?.instantiateViewController(identifier: "ChallengesTable") as? ChallengeTableViewController {
+            navigationController?.present(viewController, animated: true)
+        }
     }
-    
+
     @IBAction func smallAddTaskAction(_ sender: Any) {
+        let challengesVC = ChallengeTableViewController()
+        let navController = UINavigationController(rootViewController: challengesVC)
+        
+        self.navigationController?.present(navController, animated: true, completion: nil)
     }
-    
+
 
     /*
     // MARK: - Navigation
