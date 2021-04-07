@@ -1,9 +1,7 @@
 # Xcode
-IDEWorkspaceChecks.plist
-xcschemes/xcschememanagement.plist
-MamiKos/MamiKos.xcodeproj/xcuserdata
-MamiKos/MamiKos.xcworkspace/xcuserdata
-MamiKos/Pods/Pods.xcodeproj/xcuserdata
+Pile.xcodeproj/xcuserdata
+Pile.xcodeproj/project.xcworkspace/xcuserdata/randyefan.xcuserdatad/UserInterfaceState.xcuserstate
+
 
 # Miscellaneous
-\.DS_Store
+Pile/.DS_Store
