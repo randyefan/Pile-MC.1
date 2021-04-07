@@ -25,7 +25,7 @@ class ChallengeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
-        cell.textLabel?.text = challenges.data[indexPath.row].namaChallenge
+        cell.textLabel?.text = challenges.data[indexPath.row].namaChallengeGenerate
 
 
         return cell
