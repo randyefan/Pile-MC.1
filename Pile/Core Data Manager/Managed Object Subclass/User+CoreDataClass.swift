@@ -2,7 +2,7 @@
 //  User+CoreDataClass.swift
 //  Pile
 //
-//  Created by Randy Efan Jayaputra on 06/04/21.
+//  Created by Randy Efan Jayaputra on 08/04/21.
 //
 //
 
