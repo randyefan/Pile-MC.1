@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
+class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
     var progressChallenge = [ProgressChallenge]()
     
@@ -20,6 +20,7 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         navigationController?.navigationBar.prefersLargeTitles = true
         
         //Table
+        ProgressChallengeTableView.dataSource = self
         showProgressChallenge()
     }
     
@@ -35,10 +36,29 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         progressChallenge.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProgressChallengeTableView.dequeueReusableCell(withIdentifier: "progressCellIdentifier", for: indexPath) as! ProgressTableViewCell
         cell.titleProgressChallenge.text = progressChallenge[indexPath.row].challenges.nama
+        cell.progressBarView.progress = countProgressBar(challenge: progressChallenge[indexPath.row])
         return cell
+    }
+    
+    //MARK: - Private Function
+    // To Count Progress Bar
+    private func countProgressBar(challenge: ProgressChallenge) -> CGFloat {
+        var totalCompleted: Double = 0.0
+        for i in challenge.status {
+            if i.isCompleted {
+                totalCompleted += 1
+            }
+        }
+        
+        let count = totalCompleted / 30.0
+        return CGFloat(count)
     }
 
 
