@@ -8,26 +8,36 @@
 import UIKit
 
 class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDataSource {
-    
-    var progressChallenge = ["Use Reusable Water Bottle", "Do not use plastic bags"]
-    var detailProgressChallenge = ["Tupperware", "ToteBag"]
+
+    var progressChallenge = [ProgressChallenge]()
     
     @IBOutlet weak var ProgressChallengeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Title
         title = "Your Progress"
         navigationController?.navigationBar.prefersLargeTitles = true
-        // Do any additional setup after loading the view.
+        
+        //Table
+        showProgressChallenge()
     }
     
-    
+    func showProgressChallenge(){
+        guard let dataProgressChallenge = CoreDataManager.shared.fetchAllChallengeToProgress() else {
+            return
+        }
+        
+        self.progressChallenge = dataProgressChallenge
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return progressChallenge.count
+        progressChallenge.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProgressChallengeTableView.dequeueReusableCell(withIdentifier: "progressCellIdentifier", for: indexPath) as! ProgressTableViewCell
+        cell.titleProgressChallenge.text = progressChallenge[indexPath.row].challenges.nama
         return cell
     }
 
