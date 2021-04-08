@@ -13,10 +13,13 @@ class ChallengeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTable()
+
+    }
+
+    func setupTable() {
         title = "Challenges"
         navigationController?.navigationBar.prefersLargeTitles = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Challenge")
     }
 
     // MARK: - Table view data source
@@ -32,18 +35,21 @@ class ChallengeTableViewController: UITableViewController {
         cell.textLabel?.text = challenges.data[indexPath.row].namaChallengeGenerate
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
-
         return cell
     }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView(frame: CGRect.zero)
     }
-    
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let detailVC = ChallengeDetailViewController()
-        
-        navigationController?.pushViewController(detailVC, animated: true)
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        if let detailVC = storyboard.instantiateViewController(identifier: "ChallengeDetail") as? ChallengeDetailViewController {
+
+            detailVC.selectedChallenge = challenges.data[indexPath.row]
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+
     }
 
 }

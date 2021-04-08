@@ -23,13 +23,16 @@ class HomeViewController: UIViewController {
 
 
     @IBAction func addTaskAction(_ sender: Any) {
-        if let viewController = storyboard?.instantiateViewController(identifier: "ChallengesTable") as? ChallengeTableViewController {
-            navigationController?.present(viewController, animated: true)
-        }
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
+        let navController = UINavigationController(rootViewController: challengesVC)
+        
+        self.navigationController?.present(navController, animated: true, completion: nil)
     }
 
     @IBAction func smallAddTaskAction(_ sender: Any) {
-        let challengesVC = ChallengeTableViewController()
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
         let navController = UINavigationController(rootViewController: challengesVC)
         
         self.navigationController?.present(navController, animated: true, completion: nil)

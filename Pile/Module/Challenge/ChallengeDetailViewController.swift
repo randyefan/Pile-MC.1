@@ -7,20 +7,47 @@
 
 import UIKit
 
-class ChallengeDetailViewController: UIViewController {
-    @IBOutlet var thubnailImage: UIImageView!
-    @IBOutlet var challengeTitle: UILabel!
-    @IBOutlet var introDescription: UILabel!
-    @IBOutlet var whyDescription: UILabel!
-    @IBOutlet var environmentPoint: UILabel!
-    @IBOutlet var addTask: UIButton!
-    
+class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
+    var selectedChallenge: ChallengeGenerate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupDetail()
     }
-    
+
+    func setupDetail() {
+        if let challenge = selectedChallenge {
+            selectedChallenge = challenge
+        }
+
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 100
+
+
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageCell
+
+
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailCell
+
+            cell.challenge = selectedChallenge
+            return cell
+
+        }
+    }
+
 
     /*
     // MARK: - Navigation
