@@ -33,6 +33,11 @@ struct DailyChallenges {
     var status: Status
 }
 
+struct ProgressChallenge {
+    var challenges: Challenge
+    var status: [Status]
+}
+
 struct Challenges {
     var data = [
         ChallengeGenerate(
