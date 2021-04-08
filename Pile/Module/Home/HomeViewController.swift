@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+   
 
     @IBOutlet weak var worldLevelText: UILabel!
     @IBOutlet weak var userNameText: UILabel!
@@ -18,67 +18,97 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var taskListTableView: UITableView!
     @IBOutlet weak var totalEpProgressView: UIProgressView!
     
-    let challenges = CoreDataManager.shared.fetchChallengeStatusToday()
+    @IBOutlet weak var imageSequence: UIImageView!
+    
+    var challengesData: [DailyChallenges]?
+    var userData: User?
     var tableRowHeight = 0
+    var imageList: [UIImage]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let fetchChallenge = CoreDataManager.shared.fetchChallengeStatusToday()
-        //fetchUserData()
-        isChallengeExist()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchUserData()
+        
+        
+        //fetch user & challenge
+        userData = CoreDataManager.shared.fetchUser()
+        challengesData = CoreDataManager.shared.fetchChallengeStatusToday()
+        
+        //validate is user exist
+        if userData == nil{
+            let WelcomePageVC = WelcomePageViewController()
+            WelcomePageVC.modalPresentationStyle = .fullScreen
+            self.present(WelcomePageVC, animated: true, completion: nil)
+            
+        }else{
+            isChallengeExist()
+           fetchUserData()
+        }
     }
+    
+    
     
     func fetchUserData(){
-        let user = CoreDataManager.shared.fetchUser()!
-        //userNameText.text = user.name
-        //worldLevelText.text = "\(user.points/100)"
-        //totalEpText.text = "\(user.points%100)/100"
-        //totalEpProgressView.progress = Float(user.points%100/100)
+        
+        //user info
+        userNameText.text = userData!.name
+        worldLevelText.text = "\(userData!.points/100)"
+        totalEpText.text = "\(userData!.points%100)/100"
+        totalEpProgressView.progress = Float(userData!.points%100/100)
+        
+        //world data
+        imageSequenceSetup()
     }
+    
+    func imageSequenceSetup(){
+        imageList = [UIImage(named: "image-1")!,
+                                     UIImage(named: "image-2")!,
+                                     UIImage(named: "image-3")!]
+        
+        imageSequence.contentMode = .center
+        imageSequence.image = UIImage.animatedImage(with: imageList, duration: 1.0)
+    }
+    
+    
     
     func isChallengeExist(){
-        if challenges == nil{
-            addTaskButton.isHidden = true
-        }
-    }
-    
-    
-    
-    @IBAction func addTaskAction(_ sender: Any) {
-        let addChallengeModal = ChallengeDetailViewController()
-        
-        self.present(addChallengeModal, animated: true, completion: nil)
-    }
-    
-    
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if challenges == nil{
-            return 0
+        if challengesData == nil{
+            addTaskButton.isHidden = false
+            taskListTableView.isHidden = true
+            print("Nil")
         }else{
-            return challenges!.count
+            addTaskButton.isHidden = true
+            taskListTableView.isHidden = false
         }
+    }
+    
+ 
+    @IBAction func addTaskAction(_ sender: Any) {
+//        let addChallengeModal = ChallengeDetailViewController()
+//        self.present(addChallengeModal, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
+        let navController = UINavigationController(rootViewController: challengesVC)
+        self.navigationController?.present(navController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return challengesData?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "challengeTitleCell", for: indexPath) as! TaskTableViewCell
+        let cell = taskListTableView.dequeueReusableCell(withIdentifier: "TaskTableViewCell") as! TaskTableViewCell
         
-        cell.challengeTitleText.text = challenges?[indexPath.row].challenges.nama
-        
+        cell.challengeTitleText.text = challengesData?[indexPath.row].challenges.nama
         
         return cell
+        
     }
+
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(tableRowHeight)
-    }
     /*
     // MARK: - Navigation
 

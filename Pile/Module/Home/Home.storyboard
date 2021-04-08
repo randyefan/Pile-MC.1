@@ -16,10 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhS-5k-sp7">
-                                <rect key="frame" x="0.0" y="88" width="390" height="312"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zfM-fV-aj4">
                                 <rect key="frame" x="16" y="451.00000000000006" width="358" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,8 +79,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="8bC-Xf-vdC" id="asu-Ct-wTF"/>
-                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="Fz1-i0-8dS"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0aA-e5-fxY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JvA-xD-hT5"/>
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwo-Q6-0lA">
@@ -107,6 +103,10 @@
                                     <action selector="addTaskAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2vU-k9-cYY"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhS-5k-sp7">
+                                <rect key="frame" x="8" y="88" width="390" height="312"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -114,6 +114,7 @@
                     <navigationItem key="navigationItem" title="Home" id="cb6-tD-hd0"/>
                     <connections>
                         <outlet property="addTaskButton" destination="s6Y-mA-9co" id="X4A-3c-jCL"/>
+                        <outlet property="imageSequence" destination="lhS-5k-sp7" id="fLl-gk-qkD"/>
                         <outlet property="taskListTableView" destination="iAB-o4-AUf" id="8m5-um-6jd"/>
                         <outlet property="totalEpProgressView" destination="zfM-fV-aj4" id="LMa-f0-wcU"/>
                         <outlet property="totalEpText" destination="AMp-Ya-ejk" id="VQu-NU-2OQ"/>
