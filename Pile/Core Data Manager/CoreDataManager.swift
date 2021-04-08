@@ -62,7 +62,12 @@ struct CoreDataManager {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
         do {
             let user = try context.fetch(fetchRequest)
-            return user[0] as? User
+            if user.count == 0 {
+                print("User Belum ada")
+                return nil
+            } else {
+                return user[0] as? User
+            }
         } catch {
             print("could not fetch \(error.localizedDescription)")
             return nil
