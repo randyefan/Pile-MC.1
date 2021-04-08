@@ -12,10 +12,13 @@ class DetailCell: UITableViewCell {
     @IBOutlet weak var challengeDescription: UILabel!
     @IBOutlet weak var whyDescription: UILabel!
     
+    @IBOutlet weak var addTaskButton: UIButton!
+    
     var challenge: ChallengeGenerate? {
         didSet {
             challengeTitle.text = challenge?.namaChallengeGenerate
             challengeDescription.text = challenge?.descriptionGenerate
+            addTaskButton.layer.cornerRadius = 5
         }
     }
     
