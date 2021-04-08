@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211C607A261D8A2900BCCE5A /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211C6079261D8A2900BCCE5A /* ProgressTableViewCell.swift */; };
+		211C607D261D8B4900BCCE5A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211C607C261D8B4900BCCE5A /* ProgressViewController.swift */; };
 		215A2130261B076600B80028 /* WelcomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215A212F261B076600B80028 /* WelcomePageViewController.swift */; };
 		217B0AD3261B5050002757CD /* alertActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217B0AD2261B5050002757CD /* alertActionViewController.swift */; };
 		61185046261AAB730092974A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61185045261AAB730092974A /* AppDelegate.swift */; };
@@ -29,14 +31,13 @@
 		6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */; };
 		6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */; };
 		6EC41262261AE9770055DB27 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41261261AE9770055DB27 /* Challenge.swift */; };
-		6EC41265261AEA850055DB27 /* How.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41264261AEA850055DB27 /* How.swift */; };
-		6EC41268261AEACB0055DB27 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41267261AEACB0055DB27 /* Status.swift */; };
-		6EC4126B261AEB420055DB27 /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC4126A261AEB420055DB27 /* Challenges.swift */; };
 		B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */; };
 		B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211C6079261D8A2900BCCE5A /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
+		211C607C261D8B4900BCCE5A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		215A212F261B076600B80028 /* WelcomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePageViewController.swift; sourceTree = "<group>"; };
 		217B0AD2261B5050002757CD /* alertActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertActionViewController.swift; sourceTree = "<group>"; };
 		61185042261AAB730092974A /* Pile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,9 +62,6 @@
 		6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
 		6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		6EC41261261AE9770055DB27 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
-		6EC41264261AEA850055DB27 /* How.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = How.swift; sourceTree = "<group>"; };
-		6EC41267261AEACB0055DB27 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
-		6EC4126A261AEB420055DB27 /* Challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
 		B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				6118506B261AB1250092974A /* ChallengeProgress.storyboard */,
+				211C6079261D8A2900BCCE5A /* ProgressTableViewCell.swift */,
+				211C607C261D8B4900BCCE5A /* ProgressViewController.swift */,
 			);
 			path = "Challenge Progress";
 			sourceTree = "<group>";
@@ -291,6 +291,7 @@
 			files = (
 				6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */,
 				61185046261AAB730092974A /* AppDelegate.swift in Sources */,
+				211C607A261D8A2900BCCE5A /* ProgressTableViewCell.swift in Sources */,
 				61195028261C88A10009DE71 /* User+CoreDataClass.swift in Sources */,
 				61195024261C88A10009DE71 /* Challenge+CoreDataClass.swift in Sources */,
 				61185048261AAB730092974A /* SceneDelegate.swift in Sources */,
@@ -299,6 +300,7 @@
 				B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
+				211C607D261D8B4900BCCE5A /* ProgressViewController.swift in Sources */,
 				61195025261C88A10009DE71 /* Challenge+CoreDataProperties.swift in Sources */,
 				6119500A261C65B00009DE71 /* CoreDataManager.swift in Sources */,
 				61195029261C88A10009DE71 /* User+CoreDataProperties.swift in Sources */,
