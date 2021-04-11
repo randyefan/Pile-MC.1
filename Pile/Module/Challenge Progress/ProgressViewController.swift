@@ -20,8 +20,12 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         navigationController?.navigationBar.prefersLargeTitles = true
         
         //Table
-        ProgressChallengeTableView.dataSource = self
         showProgressChallenge()
+    }
+    
+    func setupTableView() {
+        ProgressChallengeTableView.dataSource = self
+        ProgressChallengeTableView.delegate = self
     }
     
     func showProgressChallenge(){
@@ -60,18 +64,4 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         let count = totalCompleted / 30.0
         return CGFloat(count)
     }
-
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
