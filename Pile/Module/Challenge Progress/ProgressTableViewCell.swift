@@ -14,6 +14,12 @@ class ProgressTableViewCell: UITableViewCell {
     @IBOutlet weak var progressBarView: CircularProgressBar!
     @IBOutlet weak var progressBarLabel: UILabel!
     
+    var progChallenge: ProgressChallenge? {
+        didSet{
+            titleProgressChallenge.text = progChallenge?.challenges.nama
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

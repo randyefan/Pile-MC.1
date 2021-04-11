@@ -46,8 +46,7 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = ProgressChallengeTableView.dequeueReusableCell(withIdentifier: "progressCellIdentifier", for: indexPath) as! ProgressTableViewCell
-        cell.titleProgressChallenge.text = progressChallenge[indexPath.row].challenges.nama
-        cell.progressBarView.progress = countProgressBar(challenge: progressChallenge[indexPath.row])
+        cell.progChallenge = progressChallenge[indexPath.row]
         return cell
     }
     
