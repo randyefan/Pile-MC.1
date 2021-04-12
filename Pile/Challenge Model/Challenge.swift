@@ -79,7 +79,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Gunakan sapu tangan atau benda lain yang bisa digunakan sebagai alternatif tisu sekali pakai")],
+                    captionGenerate: "Gunakan sapu tangan sebagai alternatif tisu sekali pakai")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -100,7 +100,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Tentukan makanan yang kalian pilih dan pakai food countainer kalian untuk wadah makanan tersebut")],
+                    captionGenerate: "Gunakan Botol reusable (tumbler) untuk minuman kalian.")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -126,7 +126,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Tentukan makanan yang kalian pilih dan pakai food countainer kalian untuk wadah makanan tersebut")],
+                    captionGenerate: "Pakai food countainer kalian untuk wadah makanan kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -152,7 +152,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Caranya sangat mudah, bawa selalu tas reusable di tas atau kendaraan kalian.")],
+                    captionGenerate: "Bawa selalu tas reusable dan gunakan saat berbelanja")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -178,10 +178,10 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Berusaha untuk tidak menggunakan sedotan."),
+                    captionGenerate: "Berusaha untuk tidak menggunakan sedotan plastik"),
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Jika memang harus menggunakan sedotan, maka carilah alternatif dari sedotan plastik, tetap jaga dan gunakan baik-baik. Contohnya sedotan stainless akan sia-sia jika tidak digunakan lebih dari 149 kali.")],
+                    captionGenerate: "Pakai sedotan stainless untuk minuman kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -201,10 +201,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Sediakan peralatan makan yang munking akan kamu butuhkan"),
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Bawa selalu peralatan makan ini sebelum memulai aktifitas")],
+                    captionGenerate: "Bawa selalu peralatan makan untuk makanan kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -220,7 +217,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Pisahkan sampah organik (semua yang bisa dikompos, contohnya sisa makanan) dan sampah anorganik (yang tidak bisa dikompos, contohnya plastik, kardus, dan lain-lain).")],
+                    captionGenerate: "Pisahkan sampah organik dan sampah anorganik")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -236,10 +233,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Sediakan makanan yang akan dibawa sebelum beraktivitas."),
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Mungkin untuk alternatif lain, bisa bawa wadah untuk beli bekal makan siang.")],
+                    captionGenerate: "Bawa dan pakai wadah makanan untuk beli bekal makan kalian.")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
@@ -264,7 +258,7 @@ struct Challenges {
                     captionGenerate: "Seberapa sering barang itu akan digunakan?"),
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Apakah akan spark joy & -membuat kamu happy?"),
+                    captionGenerate: "Apakah akan spark joy & membuat kamu happy?"),
                 HowGenerate(
                     iconGenerate: "",
                     captionGenerate: "Bisakah kita bertanggung jawab atas sampahnya?")],
@@ -316,10 +310,10 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Share sedikit demi sedikit informasi tentang climate change ke teman-teman kalian. Bisa melalui obrolan langsung, bacaan, maupun melalui berbagai media (film, video, atau podcast).Misalnya apa itu climate change, dampaknya seperti apa, dan hal-hal yang bisa dikaitkan dengan kehidupan sehari-hari mereka yang bisa berubah akibat climate change."),
+                    captionGenerate: "Share informasi tentang climate change ke teman-teman kalian"),
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Mulai zero waste lifestyle dari diri sendiri untuk bisa jadi contoh atau role model bagi orang-orang disekitar kita. Zero waste lifestyle juga menjadi salah satu upaya pencegahan climate change."),
+                    captionGenerate: "Mulai zero waste lifestyle dari diri sendiri untuk bisa menjadi contoh"),
             ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -354,7 +348,7 @@ struct Challenges {
                     captionGenerate: "Menyadari kalau kompos itu proses belajar utk hal yg lebih baik."),
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Jangan takut gagal atau salah, karena proses kompos sama dengan bereksperimen hingga benar-benar tau cara kompos yang benar."),
+                    captionGenerate: "Jangan takut gagal atau salah, karena proses kompos sama dengan bereksperimen"),
             ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -383,10 +377,7 @@ struct Challenges {
             howGenerate: [
                 HowGenerate(
                     iconGenerate: "",
-                    captionGenerate: "Masak atau beli makanan sesuai dengan kebutuhan dan porsi makan kalian."),
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Walaupun masih berlebih saat dimakan sekali, olah kembali sisa makanan tersebut menjadi makanan lain agar tetap habis (jika mungkin untuk dilakukan)."),
+                    captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
