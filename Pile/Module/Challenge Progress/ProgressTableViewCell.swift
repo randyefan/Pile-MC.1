@@ -11,17 +11,20 @@ class ProgressTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var titleProgressChallenge: UILabel!
+    @IBOutlet weak var progressBarView: CircularProgressBar!
+    @IBOutlet weak var progressBarLabel: UILabel!
+    
+    var progChallenge: ProgressChallenge? {
+        didSet{
+            titleProgressChallenge.text = progChallenge?.challenges.nama
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
-
 }

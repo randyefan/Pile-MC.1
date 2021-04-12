@@ -62,12 +62,7 @@ struct CoreDataManager {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
         do {
             let user = try context.fetch(fetchRequest)
-            if user.count == 0 {
-                print("User Belum ada")
-                return nil
-            } else {
-                return user[0] as? User
-            }
+            return user.count == 0 ? nil : user[0] as? User
         } catch {
             print("could not fetch \(error.localizedDescription)")
             return nil
@@ -117,6 +112,7 @@ struct CoreDataManager {
         
         do {
             try context.save()
+            print("saved \(challenge.namaChallengeGenerate)")
         } catch {
             fatalError()
         }
@@ -144,16 +140,17 @@ struct CoreDataManager {
     }
     
     // Use this function to get delete challenge from home page
-    func deleteChallenge(challenge: Challenge) {
+    func deleteChallenge(status: Status) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         do {
-            context.delete(challenge)
+//            context.delete(challenge)
+            context.delete(status)
         }
         
         do {
             try context.save()
         } catch {
-            print("error to delete")
+            print("\(error.localizedDescription)")
         }
     }
     
