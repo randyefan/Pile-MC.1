@@ -31,6 +31,10 @@
 		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
 		6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */; };
 		6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */; };
+		6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0E85261ED50900AFEC13 /* ImageCell.swift */; };
+		6E1E0E89261ED51600AFEC13 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0E88261ED51600AFEC13 /* DetailCell.swift */; };
+		6E8B9A4326241965005DEF96 /* HowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4126241965005DEF96 /* HowCell.swift */; };
+		6E8B9A4426241965005DEF96 /* HowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4226241965005DEF96 /* HowCell.xib */; };
 		6EC41262261AE9770055DB27 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41261261AE9770055DB27 /* Challenge.swift */; };
 		B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */; };
 		B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */; };
@@ -63,6 +67,10 @@
 		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
 		6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
+		6E1E0E85261ED50900AFEC13 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		6E1E0E88261ED51600AFEC13 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		6E8B9A4126241965005DEF96 /* HowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowCell.swift; sourceTree = "<group>"; };
+		6E8B9A4226241965005DEF96 /* HowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowCell.xib; sourceTree = "<group>"; };
 		6EC41261261AE9770055DB27 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -112,6 +120,7 @@
 		6118505D261AAC220092974A /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6118505E261AAC280092974A /* Home */,
 				6118504B261AAB730092974A /* Root.storyboard */,
 				61185062261AAD8D0092974A /* Intro */,
 				6118505E261AAC280092974A /* Home */,
@@ -190,9 +199,12 @@
 		6118506F261AB1800092974A /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				6E8B9A4026241949005DEF96 /* Collection Cell */,
 				61185070261AB1A80092974A /* Challenge.storyboard */,
 				6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */,
 				6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */,
+				6E1E0E85261ED50900AFEC13 /* ImageCell.swift */,
+				6E1E0E88261ED51600AFEC13 /* DetailCell.swift */,
 			);
 			path = Challenge;
 			sourceTree = "<group>";
@@ -224,6 +236,15 @@
 				61950E74261EA4E5006051D0 /* CircularProgressBar.swift */,
 			);
 			path = "Progress Bar View";
+			sourceTree = "<group>";
+		};
+		6E8B9A4026241949005DEF96 /* Collection Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E8B9A4126241965005DEF96 /* HowCell.swift */,
+				6E8B9A4226241965005DEF96 /* HowCell.xib */,
+			);
+			path = "Collection Cell";
 			sourceTree = "<group>";
 		};
 		6EC4125D261AE7E10055DB27 /* Challenge Model */ = {
@@ -293,6 +314,7 @@
 			files = (
 				61185071261AB1A80092974A /* Challenge.storyboard in Resources */,
 				61185055261AAB730092974A /* LaunchScreen.storyboard in Resources */,
+				6E8B9A4426241965005DEF96 /* HowCell.xib in Resources */,
 				6118506D261AB1250092974A /* ChallengeProgress.storyboard in Resources */,
 				61185052261AAB730092974A /* Assets.xcassets in Resources */,
 				6118504D261AAB730092974A /* Root.storyboard in Resources */,
@@ -321,10 +343,14 @@
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
 				61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */,
+				61195025261C88A10009DE71 /* Challenge+CoreDataProperties.swift in Sources */,
+				6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */,
+				6E8B9A4326241965005DEF96 /* HowCell.swift in Sources */,
 				211C607D261D8B4900BCCE5A /* ProgressViewController.swift in Sources */,
 				6119500A261C65B00009DE71 /* CoreDataManager.swift in Sources */,
 				61950E64261E981C006051D0 /* User+CoreDataProperties.swift in Sources */,
 				6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */,
+				6E1E0E89261ED51600AFEC13 /* DetailCell.swift in Sources */,
 				B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */,
 				61950E67261E981C006051D0 /* Challenge+CoreDataClass.swift in Sources */,
 				61950E68261E981C006051D0 /* Challenge+CoreDataProperties.swift in Sources */,
