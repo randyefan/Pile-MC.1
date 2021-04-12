@@ -144,16 +144,17 @@ struct CoreDataManager {
     }
     
     // Use this function to get delete challenge from home page
-    func deleteChallenge(challenge: Challenge) {
+    func deleteChallenge(status: Status) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         do {
-            context.delete(challenge)
+//            context.delete(challenge)
+            context.delete(status)
         }
         
         do {
             try context.save()
         } catch {
-            print("error to delete")
+            print("\(error.localizedDescription)")
         }
     }
     

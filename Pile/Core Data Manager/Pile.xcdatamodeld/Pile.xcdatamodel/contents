@@ -8,13 +8,13 @@
         <attribute name="penalty" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="pointReward" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="thumbnail" attributeType="String"/>
-        <relationship name="status" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Status" inverseName="challenge" inverseEntity="Status"/>
+        <relationship name="status" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Status" inverseName="challenge" inverseEntity="Status"/>
         <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="challenge" inverseEntity="User"/>
     </entity>
     <entity name="Status" representedClassName="Status" syncable="YES">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
-        <relationship name="challenge" maxCount="1" deletionRule="Nullify" destinationEntity="Challenge" inverseName="status" inverseEntity="Challenge"/>
+        <relationship name="challenge" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Challenge" inverseName="status" inverseEntity="Challenge"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="name" attributeType="String"/>
