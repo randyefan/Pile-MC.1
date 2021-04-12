@@ -207,6 +207,19 @@ struct CoreDataManager {
         }
     }
     
+    // Call this function when need to update status completed
+    func updateStatusCompleted(status: Status) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        do {
+            status.setValue(true, forKey: "isCompleted")
+            do {
+                try context.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
     
     // MARK: - Private Predicate Function
     private func getPredicateForTodayInStatus() -> NSCompoundPredicate {
