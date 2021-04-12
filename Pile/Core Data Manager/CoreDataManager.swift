@@ -208,14 +208,16 @@ struct CoreDataManager {
     }
     
     // Call this function when need to update status completed
-    func updateStatusCompleted(status: Status) {
+    func updateStatusCompleted(status: Status) -> Bool {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         do {
             status.setValue(true, forKey: "isCompleted")
             do {
                 try context.save()
+                return true
             } catch {
                 print(error.localizedDescription)
+                return false
             }
         }
     }
