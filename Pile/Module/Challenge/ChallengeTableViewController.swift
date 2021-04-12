@@ -24,7 +24,6 @@ class ChallengeTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return challenges.data.count
     }
 
@@ -45,7 +44,6 @@ class ChallengeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
         if let detailVC = storyboard.instantiateViewController(identifier: "ChallengeDetail") as? ChallengeDetailViewController {
-
             detailVC.selectedChallenge = challenges.data[indexPath.row]
             navigationController?.pushViewController(detailVC, animated: true)
         }

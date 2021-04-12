@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -48,8 +48,6 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         return (challenge?.howGenerate.count)!
     }
 
-
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "howCell", for: indexPath) as! HowCell
         cell.how = challenge?.howGenerate[indexPath.row]
@@ -57,4 +55,8 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         return cell
     }
 
+    @IBAction func addTaskAction(_ sender: UIButton) {
+        guard let user = CoreDataManager.shared.fetchUser() else { return }
+        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+    }
 }

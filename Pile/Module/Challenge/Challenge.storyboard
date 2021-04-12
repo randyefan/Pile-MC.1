@@ -95,14 +95,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" id="cdu-jR-ymy" customClass="DetailCell" customModule="Pile" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="218" width="390" height="592"/>
+                                        <rect key="frame" x="0.0" y="218" width="390" height="470"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cdu-jR-ymy" id="0gu-OO-FAc">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="592"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="470"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hj3-YC-nNo">
-                                                    <rect key="frame" x="15" y="0.0" width="360" height="582"/>
+                                                    <rect key="frame" x="15" y="0.0" width="360" height="460"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTl-Pk-cgQ">
                                                             <rect key="frame" x="0.0" y="0.0" width="360" height="20.333333333333332"/>
@@ -135,10 +135,10 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dPW-tm-SnQ">
-                                                            <rect key="frame" x="0.0" y="170" width="360" height="250"/>
+                                                            <rect key="frame" x="0.0" y="170" width="360" height="128"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="UGl-bN-w14"/>
+                                                                <constraint firstAttribute="height" constant="128" id="UGl-bN-w14"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rme-4t-u2d">
                                                                 <size key="itemSize" width="128" height="128"/>
@@ -153,19 +153,19 @@
                                                             </connections>
                                                         </collectionView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.down.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="41P-Ds-ABk">
-                                                            <rect key="frame" x="0.0" y="435" width="360" height="54.666666666666686"/>
+                                                            <rect key="frame" x="0.0" y="313" width="360" height="54.666666666666686"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="55" id="u1W-Me-YQ2"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 Point / Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eie-hR-2NT">
-                                                            <rect key="frame" x="0.0" y="505" width="360" height="17"/>
+                                                            <rect key="frame" x="0.0" y="383" width="360" height="17"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFW-uo-oo7">
-                                                            <rect key="frame" x="0.0" y="537" width="360" height="45"/>
+                                                            <rect key="frame" x="0.0" y="415" width="360" height="45"/>
                                                             <color key="backgroundColor" red="0.32549019610000002" green="0.56862745100000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="9T6-zr-Qbp"/>
@@ -174,6 +174,9 @@
                                                             <state key="normal" title="Add Task">
                                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="addTaskAction:" destination="cdu-jR-ymy" eventType="touchUpInside" id="nPS-an-95O"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
