@@ -28,6 +28,7 @@
 		61950E66261E981C006051D0 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E60261E981C006051D0 /* Status+CoreDataProperties.swift */; };
 		61950E67261E981C006051D0 /* Challenge+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E61261E981C006051D0 /* Challenge+CoreDataClass.swift */; };
 		61950E68261E981C006051D0 /* Challenge+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E62261E981C006051D0 /* Challenge+CoreDataProperties.swift */; };
+		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
 		6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */; };
 		6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */; };
 		6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0E85261ED50900AFEC13 /* ImageCell.swift */; };
@@ -63,6 +64,7 @@
 		61950E60261E981C006051D0 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61950E61261E981C006051D0 /* Challenge+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61950E62261E981C006051D0 /* Challenge+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
 		6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		6E1E0E85261ED50900AFEC13 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -107,8 +109,8 @@
 				6EC4125D261AE7E10055DB27 /* Challenge Model */,
 				61185060261AAD4C0092974A /* App */,
 				6118505D261AAC220092974A /* Module */,
-				61185062261AAD8D0092974A /* Intro */,
 				61185064261AADE80092974A /* Core Data Manager */,
+				61950E6D261EA3FD006051D0 /* Custom View */,
 				61185061261AAD660092974A /* Resources */,
 				61185056261AAB730092974A /* Info.plist */,
 			);
@@ -120,6 +122,8 @@
 			children = (
 				6118505E261AAC280092974A /* Home */,
 				6118504B261AAB730092974A /* Root.storyboard */,
+				61185062261AAD8D0092974A /* Intro */,
+				6118505E261AAC280092974A /* Home */,
 				6118506F261AB1800092974A /* Challenge */,
 				6118505F261AAD130092974A /* Challenge Progress */,
 			);
@@ -216,6 +220,22 @@
 				61950E62261E981C006051D0 /* Challenge+CoreDataProperties.swift */,
 			);
 			path = "Managed Object Subclass";
+			sourceTree = "<group>";
+		};
+		61950E6D261EA3FD006051D0 /* Custom View */ = {
+			isa = PBXGroup;
+			children = (
+				61950E6E261EA40F006051D0 /* Progress Bar View */,
+			);
+			path = "Custom View";
+			sourceTree = "<group>";
+		};
+		61950E6E261EA40F006051D0 /* Progress Bar View */ = {
+			isa = PBXGroup;
+			children = (
+				61950E74261EA4E5006051D0 /* CircularProgressBar.swift */,
+			);
+			path = "Progress Bar View";
 			sourceTree = "<group>";
 		};
 		6E8B9A4026241949005DEF96 /* Collection Cell */ = {
@@ -322,6 +342,7 @@
 				61950E65261E981C006051D0 /* Status+CoreDataClass.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
+				61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */,
 				61195025261C88A10009DE71 /* Challenge+CoreDataProperties.swift in Sources */,
 				6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */,
 				6E8B9A4326241965005DEF96 /* HowCell.swift in Sources */,
