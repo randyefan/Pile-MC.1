@@ -30,6 +30,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         fetchUserData()
         validateIfUserExist()
+        
+        let dirPaths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let docsDir = dirPaths[0]
+        print(docsDir)
     }
     
     
@@ -148,13 +152,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if editingStyle == .delete{ //handle delete here
             //tableView.beginUpdates()
             
-            
-            _ = CoreDataManager.shared.deleteChallenge(challenge: challengesData![indexPath.row].challenges)
+            guard let challenge = challengesData?[indexPath.row].challenges, let status = challengesData?[indexPath.row].status else {
+                return
+            }
+            CoreDataManager.shared.deleteChallenge(status: status)
             challengesData?.remove(at: indexPath.row)
            // dummyChallenge.remove(at: indexPath.row)
             //showRemoveAlert()
             tableView.deleteRows(at: [indexPath], with: .fade)
-            fetchUserData()
+//            fetchUserData()
+            tableView.reloadData()
             //tableView.endUpdates()
             
         }
