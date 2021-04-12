@@ -7,15 +7,16 @@
 
 import UIKit
 
-class DetailCell: UITableViewCell {
+class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var challengeDescription: UILabel!
     @IBOutlet weak var whyDescription: UILabel!
-
     @IBOutlet weak var addTaskButton: UIButton!
 
     var joinWhy = ""
-
     var challenge: ChallengeGenerate? {
         didSet {
             challengeTitle.text = challenge?.namaChallengeGenerate
@@ -31,19 +32,29 @@ class DetailCell: UITableViewCell {
             }
 
             whyDescription.text = joinWhy
-
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        collectionView.register(UINib(nibName: "HowCell", bundle: nil), forCellWithReuseIdentifier: "howCell")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
 
-        // Configure the view for the selected state
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (challenge?.howGenerate.count)!
+    }
+
+
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "howCell", for: indexPath) as! HowCell
+        cell.how = challenge?.howGenerate[indexPath.row]
+
+        return cell
     }
 
 }

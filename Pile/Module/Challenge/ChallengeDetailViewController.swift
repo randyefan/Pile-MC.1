@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var selectedChallenge: ChallengeGenerate?
@@ -35,20 +35,9 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailCell
-
             cell.challenge = selectedChallenge
             return cell
 
         }
-    }
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "howCell", for: indexPath) as! HowCell
-
-        return cell
     }
 }
