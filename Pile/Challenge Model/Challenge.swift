@@ -52,13 +52,13 @@ struct Challenges {
                     detailGenerate: "Dengan mengetahui sampah yang kita hasilkan, kita dapat lebih tahu dan menilai hal-hal apa yang benar-benar harus kita konsumsi dan mencari alternatif tanpa sampah.")],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "audit",
                     captionGenerate: "catat dan kategorikan sampah apa yang kamu hasilkan")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "02",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "kain",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Gunakan sapu tangan sebagai pengganti tisu",
             descriptionGenerate: """
@@ -73,7 +73,7 @@ struct Challenges {
                     detailGenerate: "Dengan kita mengurangi pemakaian tisu kita dapat mengurangi kebutuhan pohon dan air.")],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "kain",
                     captionGenerate: "Gunakan sapu tangan sebagai alternatif tisu sekali pakai")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -94,7 +94,7 @@ struct Challenges {
                     detailGenerate: "Menggunakan 1 botol reusable sama dengan menghemat 1.60 botol plastik, mengurangi pembuatan botol plastik di TPA, karena botol plastik juga membutuhkan ratusan tahun untuk terurai.")],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Bawa Botol Minum",
                     captionGenerate: "Gunakan Botol reusable (tumbler) untuk minuman kalian.")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -120,7 +120,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "pakai food container",
                     captionGenerate: "Pakai food countainer kalian untuk wadah makanan kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -146,7 +146,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Bawa Tas",
                     captionGenerate: "Bawa selalu tas reusable dan gunakan saat berbelanja")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -172,10 +172,10 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Reusable Straw",
                     captionGenerate: "Berusaha untuk tidak menggunakan sedotan plastik"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Reusable Straw",
                     captionGenerate: "Pakai sedotan stainless untuk minuman kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -195,7 +195,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "reusable cuttlery",
                     captionGenerate: "Bawa selalu peralatan makan untuk makanan kalian")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -211,13 +211,13 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Sort Sampah",
                     captionGenerate: "Pisahkan sampah organik dan sampah anorganik")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "09",
-            iconChallengeGenerate: "pakai food container",
+            iconChallengeGenerate: "bento",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Bawa Makan Siang dari Rumah",
             descriptionGenerate: "Salah satu hal sederhana dan mudah yang dapat dilakukan untuk mengurangi jumlah sampah kemasan sekali pakai yaitu dengan membawa makan siang atau bekal dari rumah.",
@@ -227,7 +227,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "bento",
                     captionGenerate: "Bawa dan pakai wadah makanan untuk beli bekal makan kalian.")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -243,25 +243,25 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Apa yg akan kita lakukan dengan barang ini?"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Bisakah menggunakan kembali yg ada disekeliling / pinjam?"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Seberapa sering barang itu akan digunakan?"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Apakah akan spark joy & membuat kamu happy?"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Bisakah kita bertanggung jawab atas sampahnya?")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "11",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "bento",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Masak makanan kalian sendiri",
             descriptionGenerate: """
@@ -277,14 +277,14 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "bento",
                     captionGenerate: "Masak makanan sendiri dan membawa menggunakan food countainer"),
             ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "12",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "share",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Share Ke Teman Kamu Mengenai Climate Change",
             descriptionGenerate: """
@@ -304,18 +304,18 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "share",
                     captionGenerate: "Share informasi tentang climate change ke teman-teman kalian"),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "share",
                     captionGenerate: "Mulai zero waste lifestyle dari diri sendiri untuk bisa menjadi contoh"),
             ],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "13",
-            iconChallengeGenerate: "",
-            thumbnailChallengeGenerate: "Compost",
+            iconChallengeGenerate: "Compost",
+            thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Compost",
             descriptionGenerate: """
             Menurut laporan oleh World Bank, diperkirakan jumlah sampah akan terus meningkat hingga 70% di tahun 2050 apabila tidak ada aksi atau tindakan lebih lanjut terkait penanganan meminimalisir sampah.
@@ -336,13 +336,13 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Compost",
                     captionGenerate: "Belajar dan banyak cari tahu cara kompos."),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Compost",
                     captionGenerate: "Menyadari kalau kompos itu proses belajar utk hal yg lebih baik."),
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Compost",
                     captionGenerate: "Jangan takut gagal atau salah, karena proses kompos sama dengan bereksperimen"),
             ],
             pointRewardGenerate: 0,
@@ -371,7 +371,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "",
+                    iconGenerate: "Habiskan Makanan",
                     captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
             pointRewardGenerate: 0,
