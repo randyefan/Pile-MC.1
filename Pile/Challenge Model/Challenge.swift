@@ -37,7 +37,7 @@ struct Challenges {
     var data = [
         ChallengeGenerate(
             challengeIDGenerate: "01",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Audit",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Audit sampah yang dihasilkan",
             descriptionGenerate: """
@@ -79,7 +79,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "03",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Bawa Botol Minum",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Bawa botol minuman reusable saat aktivitas",
             descriptionGenerate: """
@@ -100,7 +100,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "04",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "pakai food container",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Pakai food container saat aktivitas",
             descriptionGenerate: """
@@ -126,7 +126,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "05",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Bawa Tas",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Bawa tas reusable kemana-mana",
             descriptionGenerate: """
@@ -152,7 +152,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "06",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Reusable Straw",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Tidak pakai sedotan atau membawa reuseable straw",
             descriptionGenerate: """
@@ -181,7 +181,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "07",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "reusable cuttlery",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Bring reusable cutlery",
             descriptionGenerate: """
@@ -204,7 +204,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "08",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Sort Sampah",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Pilah Sampah",
             descriptionGenerate: "sampah kering dan sampah basah tidak tercampur. Jika kedua jenis sampah ini tercampur, bisa menjadi sarang bakteri dan bau tak sedap.",
@@ -220,7 +220,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "09",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "pakai food container",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Bawa Makan Siang dari Rumah",
             descriptionGenerate: "Salah satu hal sederhana dan mudah yang dapat dilakukan untuk mengurangi jumlah sampah kemasan sekali pakai yaitu dengan membawa makan siang atau bekal dari rumah.",
@@ -239,7 +239,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "10",
-            iconChallengeGenerate: "",
+            iconChallengeGenerate: "Beli Barang Baru",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Tanya Diri Sendiri 5 kali Sebelum Membeli Barang Baru",
             descriptionGenerate: "Membeli barang baru tanpa pertimbangan merupakan salah satu kebiasaan buruk banyak orang yang dapat menyebabkan kita merasa boros, dengan membeli barang secara impulsif tanpa pertimbangan secara tidak langsung juga akan berdampak pada lingkungan.",
@@ -269,39 +269,6 @@ struct Challenges {
             challengeIDGenerate: "11",
             iconChallengeGenerate: "",
             thumbnailChallengeGenerate: "",
-            namaChallengeGenerate: "Cabut Listrik yang Tidak Digunakan",
-            descriptionGenerate: """
-            Do you know? Kabel ataupun charger yang masih mencolok walaupun tidak digunakan masih mengalirkan listrik walaupun dengan jumlah yang sedikit. Dengan kata lain, charger dan kabel-kabel tadi jadi “vampir listrik” di rumah kalian.
-            
-            Nah, “vampir listrik” tadi secara tidak langsung dampaknya bisa sangat signifikan, baik untuk lingkungan seperti menghabiskan energi secara cuma-cuma maupun bagi pengeluaran sehari-hari.
-
-            Lalu gimana caranya untuk kita lebih aware dengan “vampir listrik” ? Salah satu hal mudah yang bisa dilakukan yaitu dengan cara mencabut kabel atau aliran listrik yang tidak digunakan.
-            """,
-            whyGenerate: [
-                WhyGenerate(
-                    detailGenerate: "Dengan mencabut aliran listrik yang tidak terpakai, artinya kita sudah menghemat listrik dan mengurangi emisi karbon di lingkungan."),
-                WhyGenerate(
-                    detailGenerate: "Menghasilkan kualitas hidup yang lebih baik."),
-                WhyGenerate(
-                    detailGenerate: "Meminimalisir pemanasan global hingga 1,5 ° C."),
-            ],
-            howGenerate: [
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Cabut listrik jika tidak digunakan lagi."),
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Cabut semua listrik sebelum bepergian."),
-                HowGenerate(
-                    iconGenerate: "",
-                    captionGenerate: "Cabut semua listrik sebelum tidur."),
-            ],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
-        ChallengeGenerate(
-            challengeIDGenerate: "12",
-            iconChallengeGenerate: "",
-            thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Masak makanan kalian sendiri",
             descriptionGenerate: """
             Persentase sampah terbesar didominasi oleh sampah organik sebanyak 60% yang didalamnya termasuk sisa-sisa makanan. Terlebih lagi, tiap tahunnya sekitar 1,3 milliar ton makanan dibuang begitu saja.
@@ -322,7 +289,7 @@ struct Challenges {
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
-            challengeIDGenerate: "13",
+            challengeIDGenerate: "12",
             iconChallengeGenerate: "",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Share Ke Teman Kamu Mengenai Climate Change",
@@ -352,9 +319,9 @@ struct Challenges {
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
-            challengeIDGenerate: "14",
+            challengeIDGenerate: "13",
             iconChallengeGenerate: "",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "Compost",
             namaChallengeGenerate: "Compost",
             descriptionGenerate: """
             Menurut laporan oleh World Bank, diperkirakan jumlah sampah akan terus meningkat hingga 70% di tahun 2050 apabila tidak ada aksi atau tindakan lebih lanjut terkait penanganan meminimalisir sampah.
@@ -387,8 +354,8 @@ struct Challenges {
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
-            challengeIDGenerate: "15",
-            iconChallengeGenerate: "",
+            challengeIDGenerate: "14",
+            iconChallengeGenerate: "Habiskan Makanan",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Habiskan Makananmu",
             descriptionGenerate: """
