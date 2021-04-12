@@ -11,17 +11,30 @@ class DetailCell: UITableViewCell {
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var challengeDescription: UILabel!
     @IBOutlet weak var whyDescription: UILabel!
-    
+
     @IBOutlet weak var addTaskButton: UIButton!
-    
+
+    var joinWhy = ""
+
     var challenge: ChallengeGenerate? {
         didSet {
             challengeTitle.text = challenge?.namaChallengeGenerate
             challengeDescription.text = challenge?.descriptionGenerate
             addTaskButton.layer.cornerRadius = 5
+
+            for i in 0..<(challenge?.whyGenerate.count)! {
+                joinWhy += "\(challenge?.whyGenerate[i].detailGenerate ?? "")"
+
+                if(i < (challenge?.whyGenerate.count)! - 1) {
+                    joinWhy += "\n\n"
+                }
+            }
+
+            whyDescription.text = joinWhy
+
         }
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
