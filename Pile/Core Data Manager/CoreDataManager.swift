@@ -117,6 +117,7 @@ struct CoreDataManager {
         
         do {
             try context.save()
+            print("saved \(challenge.namaChallengeGenerate)")
         } catch {
             fatalError()
         }
