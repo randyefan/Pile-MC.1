@@ -24,8 +24,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imageList: [UIImage]!
     var totalEP: Int?
     
-    var dummyChallenge = ["Hello world 1","Hello world 2","Hello world 3"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
@@ -36,12 +34,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print(docsDir)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchUserData()
+        validateIfUserExist()
+    }
+    
     
     func fetchUserData(){
         //fetch user & challenge
         userData = CoreDataManager.shared.fetchUser()
         challengesData = CoreDataManager.shared.fetchChallengeStatusToday()
-        taskListTableView.reloadData()
     }
     
     func validateIfUserExist(){
@@ -83,15 +85,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func isChallengeExist(){
         addTaskButton.layer.cornerRadius = 5.0
-//        if challengesData?.count == 0{
-//            addTaskButton.isHidden = false
-//            taskListTableView.isHidden = true
-//            print("Nil")
-//        }else{
-//            addTaskButton.isHidden = true
-//            taskListTableView.isHidden = false
-//        }
-        addTaskButton.isHidden = true
+        if challengesData?.count == 0{
+            addTaskButton.isHidden = false
+            taskListTableView.isHidden = true
+            print("Nil")
+        }else{
+            taskListTableView.reloadData()
+            addTaskButton.isHidden = true
+            taskListTableView.isHidden = false
+        }
+        //addTaskButton.isHidden = true
     }
     
  
@@ -106,19 +109,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //dummy challenge coredata
         let addTask = CoreDataManager.shared.addChallengeToUser(user: userData!, challenge: ChallengeGenerate(challengeIDGenerate: "001", iconChallengeGenerate: "", thumbnailChallengeGenerate: "", namaChallengeGenerate: "Hello", descriptionGenerate: "asdasd", whyGenerate: [WhyGenerate(detailGenerate: "detail challenge")], howGenerate: [HowGenerate(iconGenerate: "", captionGenerate: "1. mencuci pakaian")], pointRewardGenerate: 5, penaltyGenerate: 5))
-        
-        fetchUserData()
+        isChallengeExist()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return challengesData?.count ?? 0
-        //return dummyChallenge.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = taskListTableView.dequeueReusableCell(withIdentifier: "challengeTitleCell") as! TaskTableViewCell
         cell.challengeTitleText.text = challengesData?[indexPath.row].challenges.nama
-        //cell.challengeTitleText.text = dummyChallenge[indexPath.row]
         return cell
     }
     
@@ -151,7 +151,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if editingStyle == .delete{ //handle delete here
             //tableView.beginUpdates()
-            
             guard let challenge = challengesData?[indexPath.row].challenges, let status = challengesData?[indexPath.row].status else {
                 return
             }
@@ -160,8 +159,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
            // dummyChallenge.remove(at: indexPath.row)
             //showRemoveAlert()
             tableView.deleteRows(at: [indexPath], with: .fade)
-//            fetchUserData()
-            tableView.reloadData()
+            isChallengeExist()
             //tableView.endUpdates()
             
         }
