@@ -26,6 +26,8 @@ class alertActionViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             print(alert.textFields![0].text!)
+            let saveUser = CoreDataManager.shared.saveUser(name: alert.textFields![0].text!)
+            self.dismiss(animated: true, completion: nil)
         }))
 
                 
