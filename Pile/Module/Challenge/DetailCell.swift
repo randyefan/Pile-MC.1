@@ -18,6 +18,7 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var challengeTitle: UILabel!
     @IBOutlet weak var challengeDescription: UILabel!
     @IBOutlet weak var whyDescription: UILabel!
+    @IBOutlet weak var everydayPoint: UILabel!
     @IBOutlet weak var addTaskButton: UIButton!
 
     weak var delegate: DetailCellDelegate?
@@ -27,6 +28,7 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
         didSet {
             challengeTitle.text = challenge?.namaChallengeGenerate
             challengeDescription.text = challenge?.descriptionGenerate
+            everydayPoint.text = "\((challenge?.pointRewardGenerate)!) Point / Day" 
             addTaskButton.layer.cornerRadius = 5
 
             for i in 0..<(challenge?.whyGenerate.count)! {
