@@ -109,3 +109,5 @@ iOSInjectionProject/
 .DS_Store
 
 Pile/Intro/.DS_Store
+
+*.xcuserstate
