@@ -32,16 +32,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99/100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMp-Ya-ejk">
-                                <rect key="frame" x="277" y="453" width="54" height="21"/>
+                                <rect key="frame" x="287" y="453" width="54" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dmc-Oa-3ri">
-                                <rect key="frame" x="339" y="446" width="35" height="35"/>
-                                <color key="backgroundColor" red="0.38141959910000001" green="0.5618199706" blue="0.49803322550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EP SMALL ICON" translatesAutoresizingMaskIntoConstraints="NO" id="dmc-Oa-3ri">
+                                <rect key="frame" x="349" y="446" width="25" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="2Mi-pZ-bc9"/>
+                                    <constraint firstAttribute="width" constant="25" id="2Mi-pZ-bc9"/>
                                     <constraint firstAttribute="height" constant="35" id="wZg-FJ-sAy"/>
                                 </constraints>
                             </imageView>
@@ -51,12 +51,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iAB-o4-AUf">
-                                <rect key="frame" x="0.0" y="611" width="390" height="233"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iAB-o4-AUf">
+                                <rect key="frame" x="0.0" y="592" width="390" height="218"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="233" id="zwe-gB-Z5G"/>
-                                </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="challengeTitleCell" textLabel="Jz6-BW-DEp" style="IBUITableViewCellStyleDefault" id="7zB-KL-XaD" customClass="TaskTableViewCell" customModule="Pile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="390" height="43.666667938232422"/>
@@ -65,7 +63,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="346" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jz6-BW-DEp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jz6-BW-DEp">
                                                     <rect key="frame" x="20" y="0.0" width="318" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -92,7 +90,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6Y-mA-9co">
-                                <rect key="frame" x="16" y="611" width="358" height="45"/>
+                                <rect key="frame" x="16" y="617" width="358" height="45"/>
                                 <color key="backgroundColor" red="0.38141959910000001" green="0.5618199706" blue="0.49803322550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Mk7-aO-Rx1"/>
@@ -139,12 +137,13 @@
                             <constraint firstItem="i2U-TD-OtE" firstAttribute="trailing" secondItem="h2h-OU-pEz" secondAttribute="trailing" id="fcl-Ry-G0M"/>
                             <constraint firstItem="lrg-cl-gWG" firstAttribute="top" secondItem="h2h-OU-pEz" secondAttribute="bottom" constant="25" id="h1B-hN-3hZ"/>
                             <constraint firstItem="zfM-fV-aj4" firstAttribute="top" secondItem="dmc-Oa-3ri" secondAttribute="bottom" constant="8" symbolic="YES" id="hdO-el-wkx"/>
+                            <constraint firstItem="iAB-o4-AUf" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="i7c-yF-Yzv"/>
                             <constraint firstItem="iAB-o4-AUf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k4o-hK-8vD"/>
                             <constraint firstItem="zfM-fV-aj4" firstAttribute="top" secondItem="AMp-Ya-ejk" secondAttribute="bottom" constant="15" id="ld2-aI-Nwg"/>
                             <constraint firstItem="i2U-TD-OtE" firstAttribute="top" secondItem="h2h-OU-pEz" secondAttribute="bottom" constant="25" id="lnx-xG-q2J"/>
-                            <constraint firstItem="iAB-o4-AUf" firstAttribute="top" secondItem="lrg-cl-gWG" secondAttribute="bottom" constant="29" id="m23-ld-5F5"/>
+                            <constraint firstItem="iAB-o4-AUf" firstAttribute="top" secondItem="lrg-cl-gWG" secondAttribute="bottom" constant="10" id="m23-ld-5F5"/>
                             <constraint firstItem="s6Y-mA-9co" firstAttribute="trailing" secondItem="i2U-TD-OtE" secondAttribute="trailing" id="oKs-qB-x6U"/>
-                            <constraint firstItem="s6Y-mA-9co" firstAttribute="top" secondItem="lrg-cl-gWG" secondAttribute="bottom" constant="29" id="vnv-LT-HMk"/>
+                            <constraint firstItem="s6Y-mA-9co" firstAttribute="top" secondItem="lrg-cl-gWG" secondAttribute="bottom" constant="35" id="vnv-LT-HMk"/>
                             <constraint firstItem="zfM-fV-aj4" firstAttribute="leading" secondItem="aO0-ex-kGL" secondAttribute="leading" id="wIZ-lM-FTy"/>
                             <constraint firstItem="aO0-ex-kGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="wV1-sA-g2Y"/>
                         </constraints>
@@ -152,6 +151,7 @@
                     <navigationItem key="navigationItem" title="Home" id="cb6-tD-hd0"/>
                     <connections>
                         <outlet property="addTaskButton" destination="s6Y-mA-9co" id="X4A-3c-jCL"/>
+                        <outlet property="addTaskMiniButton" destination="i2U-TD-OtE" id="W0F-Rl-SxV"/>
                         <outlet property="imageSequence" destination="lhS-5k-sp7" id="fLl-gk-qkD"/>
                         <outlet property="taskListTableView" destination="iAB-o4-AUf" id="8m5-um-6jd"/>
                         <outlet property="totalEpProgressView" destination="zfM-fV-aj4" id="LMa-f0-wcU"/>
@@ -164,11 +164,11 @@
             </objects>
             <point key="canvasLocation" x="1523.0769230769231" y="167.77251184834122"/>
         </scene>
-        <!--Item-->
+        <!--Your World-->
         <scene sceneID="Aib-IT-MOA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HeZ-qA-aAh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9jt-Qh-Lfr"/>
+                    <tabBarItem key="tabBarItem" title="Your World" image="network" catalog="system" id="9jt-Qh-Lfr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P4k-mU-yby">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -185,6 +185,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="EP SMALL ICON" width="642" height="642"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
