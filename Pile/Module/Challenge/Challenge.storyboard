@@ -195,6 +195,7 @@
                                             <outlet property="challengeDescription" destination="25N-9f-ccu" id="C4z-GD-65u"/>
                                             <outlet property="challengeTitle" destination="pTl-Pk-cgQ" id="aek-x7-KjP"/>
                                             <outlet property="collectionView" destination="dPW-tm-SnQ" id="wYn-FK-lYi"/>
+                                            <outlet property="everydayPoint" destination="eie-hR-2NT" id="wtM-kJ-LQo"/>
                                             <outlet property="whyDescription" destination="oYv-EJ-DaN" id="2Cs-zm-NfO"/>
                                         </connections>
                                     </tableViewCell>

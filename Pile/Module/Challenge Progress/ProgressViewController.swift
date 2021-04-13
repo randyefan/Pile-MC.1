@@ -8,16 +8,18 @@
 import UIKit
 
 class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
-
-    var progressChallenge = [ProgressChallenge]()
-    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ProgressChallengeTableView: UITableView!
+    
+    var progressChallenge = [ProgressChallenge]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Title
+
         title = "Your Progress"
         navigationController?.navigationBar.prefersLargeTitles = true
+        tableView.tableFooterView = UIView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
