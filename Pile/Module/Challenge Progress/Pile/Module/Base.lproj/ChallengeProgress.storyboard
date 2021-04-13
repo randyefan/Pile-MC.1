@@ -52,23 +52,24 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79Q-Vc-wnn">
+                                                            <rect key="frame" x="36" y="30" width="0.0" height="0.0"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LCX-KC-xKl" secondAttribute="trailing" constant="8" id="P2o-ZT-2tl"/>
                                                         <constraint firstItem="LCX-KC-xKl" firstAttribute="leading" secondItem="LC3-z9-vXK" secondAttribute="trailing" constant="12" id="Pe7-3Z-sJj"/>
+                                                        <constraint firstItem="79Q-Vc-wnn" firstAttribute="centerX" secondItem="LC3-z9-vXK" secondAttribute="centerX" id="e5O-K2-deK"/>
                                                         <constraint firstItem="LC3-z9-vXK" firstAttribute="centerY" secondItem="V3M-0J-Nsc" secondAttribute="centerY" id="gS2-0q-TmN"/>
                                                         <constraint firstItem="LCX-KC-xKl" firstAttribute="centerY" secondItem="V3M-0J-Nsc" secondAttribute="centerY" id="j71-Vy-F91"/>
                                                         <constraint firstItem="LC3-z9-vXK" firstAttribute="leading" secondItem="V3M-0J-Nsc" secondAttribute="leading" constant="12" id="kVX-tP-R3q"/>
+                                                        <constraint firstItem="79Q-Vc-wnn" firstAttribute="centerY" secondItem="LC3-z9-vXK" secondAttribute="centerY" id="w2s-VF-NJF"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79Q-Vc-wnn">
-                                                    <rect key="frame" x="52" y="30" width="0.0" height="0.0"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="V3M-0J-Nsc" secondAttribute="trailing" id="LmM-Pp-ZRY"/>
