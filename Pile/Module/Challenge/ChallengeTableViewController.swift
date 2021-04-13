@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol ChallengeTableViewDelegate: class {
+    func fetchFromHome()
+}
+
 class ChallengeTableViewController: UITableViewController {
     var challenges = Challenges()
+
+    weak var delegate: ChallengeTableViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,7 @@ class ChallengeTableViewController: UITableViewController {
 
         cell.challenge = challenges.data[indexPath.row]
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        cell.selectionStyle = .none
 
         return cell
     }
@@ -47,9 +54,16 @@ class ChallengeTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
         if let detailVC = storyboard.instantiateViewController(identifier: "ChallengeDetail") as? ChallengeDetailViewController {
             detailVC.selectedChallenge = challenges.data[indexPath.row]
+            detailVC.delegate = self
             navigationController?.pushViewController(detailVC, animated: true)
         }
 
     }
 
+}
+
+extension ChallengeTableViewController: ChallengeDetailViewDelegate {
+    func fetchFromHome() {
+        self.delegate?.fetchFromHome()
+    }
 }
