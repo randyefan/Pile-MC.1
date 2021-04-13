@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DateCollectionViewCell" customModule="Pile" customModuleProvider="target">
+            <connections>
+                <outlet property="labelDay" destination="wxk-hY-vbX" id="wmi-TA-GbV"/>
+                <outlet property="roundedView" destination="vDv-Sz-Iit" id="Fw5-Tc-Q2w"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dayCell" id="gTV-IL-0wX" customClass="DateCollectionViewCell" customModule="Pile" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="102" height="116"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="102" height="116"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMU-y8-OH5" userLabel="Superview">
+                        <rect key="frame" x="0.0" y="0.0" width="102" height="116"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxk-hY-vbX" userLabel="Label Day">
+                                <rect key="frame" x="46" y="26" width="10" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vDv-Sz-Iit" userLabel="Rounded View">
+                                <rect key="frame" x="41" y="48" width="20" height="20"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.56862745100000001" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="cbU-NR-wsE"/>
+                                    <constraint firstAttribute="height" constant="20" id="p13-aS-ztG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDv-Sz-Iit" firstAttribute="centerX" secondItem="qMU-y8-OH5" secondAttribute="centerX" id="PIA-8C-v27"/>
+                            <constraint firstItem="vDv-Sz-Iit" firstAttribute="centerY" secondItem="qMU-y8-OH5" secondAttribute="centerY" id="XzQ-em-iaG"/>
+                            <constraint firstItem="wxk-hY-vbX" firstAttribute="centerX" secondItem="qMU-y8-OH5" secondAttribute="centerX" id="skx-2h-W4L"/>
+                            <constraint firstItem="vDv-Sz-Iit" firstAttribute="top" secondItem="wxk-hY-vbX" secondAttribute="bottom" constant="4" id="vkl-Jg-PEg"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="qMU-y8-OH5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5om-I3-wab"/>
+                <constraint firstAttribute="bottom" secondItem="qMU-y8-OH5" secondAttribute="bottom" id="STm-Pq-L3c"/>
+                <constraint firstAttribute="trailing" secondItem="qMU-y8-OH5" secondAttribute="trailing" id="aI0-9h-suk"/>
+                <constraint firstItem="qMU-y8-OH5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="hmd-50-mH1"/>
+            </constraints>
+            <size key="customSize" width="102" height="116"/>
+            <point key="canvasLocation" x="175.36231884057972" y="162.05357142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
