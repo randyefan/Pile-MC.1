@@ -65,7 +65,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="346" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jz6-BW-DEp">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jz6-BW-DEp">
                                                     <rect key="frame" x="20" y="0.0" width="318" height="43.666667938232422"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -152,6 +152,7 @@
                     <navigationItem key="navigationItem" title="Home" id="cb6-tD-hd0"/>
                     <connections>
                         <outlet property="addTaskButton" destination="s6Y-mA-9co" id="X4A-3c-jCL"/>
+                        <outlet property="addTaskMiniButton" destination="i2U-TD-OtE" id="W0F-Rl-SxV"/>
                         <outlet property="imageSequence" destination="lhS-5k-sp7" id="fLl-gk-qkD"/>
                         <outlet property="taskListTableView" destination="iAB-o4-AUf" id="8m5-um-6jd"/>
                         <outlet property="totalEpProgressView" destination="zfM-fV-aj4" id="LMa-f0-wcU"/>
@@ -164,11 +165,11 @@
             </objects>
             <point key="canvasLocation" x="1523.0769230769231" y="167.77251184834122"/>
         </scene>
-        <!--Item-->
+        <!--Your World-->
         <scene sceneID="Aib-IT-MOA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HeZ-qA-aAh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9jt-Qh-Lfr"/>
+                    <tabBarItem key="tabBarItem" title="Your World" image="network" catalog="system" id="9jt-Qh-Lfr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P4k-mU-yby">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -185,6 +186,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="network" catalog="system" width="128" height="121"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
