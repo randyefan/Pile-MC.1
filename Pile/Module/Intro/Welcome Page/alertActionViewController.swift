@@ -8,16 +8,16 @@
 import UIKit
 
 class alertActionViewController: UIViewController {
-
+    
     
     @IBOutlet weak var showAlertButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         showAlertButton.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
-        }
+    }
     
-   
+    
     @objc func showAlert(){
         let alert = UIAlertController(title: "Let's Start", message: "We would like to know how to call you! \n Enter your name below", preferredStyle: .alert)
         
@@ -29,11 +29,11 @@ class alertActionViewController: UIViewController {
             let saveUser = CoreDataManager.shared.saveUser(name: alert.textFields![0].text!)
             self.dismiss(animated: true, completion: nil)
         }))
-
-                
+        
+        
         self.present(alert, animated: true, completion: nil)
     }
     
-   
-
+    
+    
 }

@@ -41,6 +41,8 @@
 		6E1E0E89261ED51600AFEC13 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0E88261ED51600AFEC13 /* DetailCell.swift */; };
 		6E8B9A4326241965005DEF96 /* HowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4126241965005DEF96 /* HowCell.swift */; };
 		6E8B9A4426241965005DEF96 /* HowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4226241965005DEF96 /* HowCell.xib */; };
+		6E8B9A4D262445D7005DEF96 /* ChallengeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4B262445D7005DEF96 /* ChallengeCell.swift */; };
+		6E8B9A4E262445D7005DEF96 /* ChallengeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E8B9A4C262445D7005DEF96 /* ChallengeCell.xib */; };
 		6EC41262261AE9770055DB27 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC41261261AE9770055DB27 /* Challenge.swift */; };
 		B76B4CC7261AF97D008DF8C3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */; };
 		B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */; };
@@ -83,6 +85,8 @@
 		6E1E0E88261ED51600AFEC13 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		6E8B9A4126241965005DEF96 /* HowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowCell.swift; sourceTree = "<group>"; };
 		6E8B9A4226241965005DEF96 /* HowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HowCell.xib; sourceTree = "<group>"; };
+		6E8B9A4B262445D7005DEF96 /* ChallengeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeCell.swift; sourceTree = "<group>"; };
+		6E8B9A4C262445D7005DEF96 /* ChallengeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeCell.xib; sourceTree = "<group>"; };
 		6EC41261261AE9770055DB27 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		B76B4CC6261AF97D008DF8C3 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B76B4CC9261B34B0008DF8C3 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,7 +136,6 @@
 		6118505D261AAC220092974A /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				6118505E261AAC280092974A /* Home */,
 				6118504B261AAB730092974A /* Root.storyboard */,
 				61185062261AAD8D0092974A /* Intro */,
 				6118505E261AAC280092974A /* Home */,
@@ -211,6 +214,7 @@
 		6118506F261AB1800092974A /* Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				6E8B9A4A262445A8005DEF96 /* Challenge Cell */,
 				6E8B9A4026241949005DEF96 /* Collection Cell */,
 				61185070261AB1A80092974A /* Challenge.storyboard */,
 				6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */,
@@ -257,6 +261,15 @@
 				6E8B9A4226241965005DEF96 /* HowCell.xib */,
 			);
 			path = "Collection Cell";
+			sourceTree = "<group>";
+		};
+		6E8B9A4A262445A8005DEF96 /* Challenge Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6E8B9A4B262445D7005DEF96 /* ChallengeCell.swift */,
+				6E8B9A4C262445D7005DEF96 /* ChallengeCell.xib */,
+			);
+			path = "Challenge Cell";
 			sourceTree = "<group>";
 		};
 		6EC4125D261AE7E10055DB27 /* Challenge Model */ = {
@@ -331,6 +344,7 @@
 				61185052261AAB730092974A /* Assets.xcassets in Resources */,
 				6118504D261AAB730092974A /* Root.storyboard in Resources */,
 				61185076261AB2AE0092974A /* WelcomePage.storyboard in Resources */,
+				6E8B9A4E262445D7005DEF96 /* ChallengeCell.xib in Resources */,
 				61185067261AAFB40092974A /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E8B9A4D262445D7005DEF96 /* ChallengeCell.swift in Sources */,
 				6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */,
 				61185046261AAB730092974A /* AppDelegate.swift in Sources */,
 				211C607A261D8A2900BCCE5A /* ProgressTableViewCell.swift in Sources */,
@@ -355,7 +370,6 @@
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
 				61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */,
-				61195025261C88A10009DE71 /* Challenge+CoreDataProperties.swift in Sources */,
 				6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */,
 				6E8B9A4326241965005DEF96 /* HowCell.swift in Sources */,
 				211C607D261D8B4900BCCE5A /* ProgressViewController.swift in Sources */,

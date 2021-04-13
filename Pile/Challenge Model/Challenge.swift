@@ -43,7 +43,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "01",
             iconChallengeGenerate: "Audit",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "AuditWaste",
             namaChallengeGenerate: "Audit sampah yang dihasilkan",
             descriptionGenerate: """
             Untuk mengurangi sampah, challenge pertama yang perlu dilakukan yaitu mengetahui sampah apa yang kita hasilkan.
@@ -57,14 +57,14 @@ struct Challenges {
                     detailGenerate: "Dengan mengetahui sampah yang kita hasilkan, kita dapat lebih tahu dan menilai hal-hal apa yang benar-benar harus kita konsumsi dan mencari alternatif tanpa sampah.")],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "audit",
+                    iconGenerate: "Audit",
                     captionGenerate: "catat dan kategorikan sampah apa yang kamu hasilkan")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "02",
             iconChallengeGenerate: "kain",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "MengurangiPenggunaanTisu",
             namaChallengeGenerate: "Gunakan sapu tangan sebagai pengganti tisu",
             descriptionGenerate: """
             Meski tisu mudah terurai saat dibuang, sebagian besar tisu yang kita gunakan dibuat dari pohon, Seperti kertas, pembuatan tisu membutuhkan kayu dan air yang sangat banyak.
@@ -85,7 +85,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "03",
             iconChallengeGenerate: "Bawa Botol Minum",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "UseReusableBottle",
             namaChallengeGenerate: "Bawa botol minuman reusable saat aktivitas",
             descriptionGenerate: """
             Tidak dapat dipungkiri bahwa plastik terkadang tidak dapat dihindari dalam kehidupan sehari-hari kita. Salah satu penggunaan plastik yang banyak digunakan misalnya untuk membeli makan yang di take away atau jajan-jajan.
@@ -106,7 +106,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "04",
             iconChallengeGenerate: "pakai food container",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "FoodContainer",
             namaChallengeGenerate: "Pakai food container saat aktivitas",
             descriptionGenerate: """
             Tidak dapat dipungkiri bahwa plastik terkadang tidak dapat dihindari dalam kehidupan sehari-hari kita. Salah satu penggunaan plastik yang banyak digunakan misalnya untuk membeli makan yang di take away atau jajan-jajan.
@@ -132,7 +132,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "05",
             iconChallengeGenerate: "Bawa Tas",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "PlasticBags",
             namaChallengeGenerate: "Bawa tas reusable kemana-mana",
             descriptionGenerate: """
             Penggunaan plastik sekali pakai tidak dapat dipisahkan dari kehidupan sehari-hari. Namun, dari segi produksi plastik banyak menggunakan oil dan natural gas yang tidak dapat diperbaharui.
@@ -158,7 +158,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "06",
             iconChallengeGenerate: "Reusable Straw",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "PlasticStraw",
             namaChallengeGenerate: "Tidak pakai sedotan atau membawa reuseable straw",
             descriptionGenerate: """
             Sedotan plastik adalah suatu penemuan baru, berabad-abad yang lalu bangsa Sumerian menggunakan tabung silindris berongga untuk mencapai cairan bir di bawah fermentasi yang mereka buat di galon yang sangat besar.
@@ -187,7 +187,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "07",
             iconChallengeGenerate: "reusable cuttlery",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "PlasticCutlery",
             namaChallengeGenerate: "Bring reusable cutlery",
             descriptionGenerate: """
             Plastic cutlery is everywhere, and most of it can be used only once. Billions of forks, knives, and spoons are thrown away each year. But like other plastic items—such as bags and bottles—cutlery can take centuries to break down naturally, giving the plastic waste ample time to work its way into the environment.
@@ -207,7 +207,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "08",
             iconChallengeGenerate: "Sort Sampah",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "AuditWaste",
             namaChallengeGenerate: "Pilah Sampah",
             descriptionGenerate: "sampah kering dan sampah basah tidak tercampur. Jika kedua jenis sampah ini tercampur, bisa menjadi sarang bakteri dan bau tak sedap.",
             whyGenerate: [
@@ -223,7 +223,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "09",
             iconChallengeGenerate: "bento",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "FoodContainer",
             namaChallengeGenerate: "Bawa Makan Siang dari Rumah",
             descriptionGenerate: "Salah satu hal sederhana dan mudah yang dapat dilakukan untuk mengurangi jumlah sampah kemasan sekali pakai yaitu dengan membawa makan siang atau bekal dari rumah.",
             whyGenerate: [
@@ -239,7 +239,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "10",
             iconChallengeGenerate: "Beli Barang Baru",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "AuditWaste",
             namaChallengeGenerate: "Tanya Diri Sendiri 5 kali Sebelum Membeli Barang Baru",
             descriptionGenerate: "Membeli barang baru tanpa pertimbangan merupakan salah satu kebiasaan buruk banyak orang yang dapat menyebabkan kita merasa boros, dengan membeli barang secara impulsif tanpa pertimbangan secara tidak langsung juga akan berdampak pada lingkungan.",
             whyGenerate: [
@@ -267,7 +267,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "11",
             iconChallengeGenerate: "bento",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "FoodContainer",
             namaChallengeGenerate: "Masak makanan kalian sendiri",
             descriptionGenerate: """
             Persentase sampah terbesar didominasi oleh sampah organik sebanyak 60% yang didalamnya termasuk sisa-sisa makanan. Terlebih lagi, tiap tahunnya sekitar 1,3 milliar ton makanan dibuang begitu saja.
@@ -290,7 +290,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "12",
             iconChallengeGenerate: "share",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "ClimateChange",
             namaChallengeGenerate: "Share Ke Teman Kamu Mengenai Climate Change",
             descriptionGenerate: """
             Climate Change (perubahan iklim) adalah perubahan signifikan yang terjadi pada suhu, curah hujan, dan angin yang berlangsung dalam waktu yang cukup lama, bisa dalam satu dekade atau bahkan lebih.
@@ -320,7 +320,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "13",
             iconChallengeGenerate: "Compost",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "LeftoverFood",
             namaChallengeGenerate: "Compost",
             descriptionGenerate: """
             Menurut laporan oleh World Bank, diperkirakan jumlah sampah akan terus meningkat hingga 70% di tahun 2050 apabila tidak ada aksi atau tindakan lebih lanjut terkait penanganan meminimalisir sampah.
@@ -355,7 +355,7 @@ struct Challenges {
         ChallengeGenerate(
             challengeIDGenerate: "14",
             iconChallengeGenerate: "Habiskan Makanan",
-            thumbnailChallengeGenerate: "",
+            thumbnailChallengeGenerate: "LeftoverFood",
             namaChallengeGenerate: "Habiskan Makananmu",
             descriptionGenerate: """
             Indonesia diperkirakan menghasilkan 64 juta ton sampah tiap tahunnya. Berdasarkan data Kementrian Lingkungan Hidup dan Kehutanan (KLHK), persentase jenis sampah yang dihasilkan didominasi oleh sampah organik, yaitu mencapai 60% dari total sampah. Diikuti oleh sampah plastik sebanyak 14%, sampah kertas 9%, metal 4,3%, kaca, kayu dan bahan lainnya 12,7%. Salah satu contoh sampah organik yaitu sisa-sisa makanan.
@@ -376,7 +376,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "Habiskan Makanan",
+                    iconGenerate: "Habisin Makanan",
                     captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
             pointRewardGenerate: 0,
