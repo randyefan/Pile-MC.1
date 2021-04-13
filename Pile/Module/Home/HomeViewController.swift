@@ -51,7 +51,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let WelcomePageVC = WelcomePageViewController()
             WelcomePageVC.modalPresentationStyle = .fullScreen
             self.present (WelcomePageVC, animated: true, completion: nil)
-
         } else {
             isChallengeExist()
             setUI()
@@ -183,5 +182,12 @@ extension HomeViewController: ChallengeTableViewDelegate {
     func fetchFromHome() {
         self.fetchChallenges()
         self.isChallengeExist()
+        guard let challenges = challengesData, let user = userData else {
+            return
+        }
+        
+        if challenges.count == 1 {
+            NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+        }
     }
 }
