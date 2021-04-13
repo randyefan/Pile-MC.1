@@ -44,7 +44,7 @@ struct Challenges {
             challengeIDGenerate: "01",
             iconChallengeGenerate: "Audit",
             thumbnailChallengeGenerate: "AuditWaste",
-            namaChallengeGenerate: "Audit sampah yang dihasilkan",
+            namaChallengeGenerate: "Audit sampah yang kamu dihasilkan",
             descriptionGenerate: """
             Untuk mengurangi sampah, challenge pertama yang perlu dilakukan yaitu mengetahui sampah apa yang kita hasilkan.
 
@@ -59,8 +59,8 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Audit",
                     captionGenerate: "catat dan kategorikan sampah apa yang kamu hasilkan")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 8,
+            penaltyGenerate: 8),
         ChallengeGenerate(
             challengeIDGenerate: "02",
             iconChallengeGenerate: "kain",
@@ -80,13 +80,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "kain",
                     captionGenerate: "Gunakan sapu tangan sebagai alternatif tisu sekali pakai")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 6,
+            penaltyGenerate: 6),
         ChallengeGenerate(
             challengeIDGenerate: "03",
             iconChallengeGenerate: "Bawa Botol Minum",
             thumbnailChallengeGenerate: "UseReusableBottle",
-            namaChallengeGenerate: "Bawa botol minuman reusable saat aktivitas",
+            namaChallengeGenerate: "Bawa botol minuman reusable saat beraktivitas",
             descriptionGenerate: """
             Tidak dapat dipungkiri bahwa plastik terkadang tidak dapat dihindari dalam kehidupan sehari-hari kita. Salah satu penggunaan plastik yang banyak digunakan misalnya untuk membeli makan yang di take away atau jajan-jajan.
             
@@ -101,13 +101,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Bawa Botol Minum",
                     captionGenerate: "Gunakan Botol reusable (tumbler) untuk minuman kalian.")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 5,
+            penaltyGenerate: 5),
         ChallengeGenerate(
             challengeIDGenerate: "04",
             iconChallengeGenerate: "pakai food container",
             thumbnailChallengeGenerate: "FoodContainer",
-            namaChallengeGenerate: "Pakai food container saat aktivitas",
+            namaChallengeGenerate: "Sediakan food container saat beraktivitas keluar",
             descriptionGenerate: """
             Tidak dapat dipungkiri bahwa plastik terkadang tidak dapat dihindari dalam kehidupan sehari-hari kita. Salah satu penggunaan plastik yang banyak digunakan misalnya untuk membeli makan yang di take away atau jajan-jajan.
 
@@ -127,13 +127,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "pakai food container",
                     captionGenerate: "Pakai food countainer kalian untuk wadah makanan kalian")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 5,
+            penaltyGenerate: 5),
         ChallengeGenerate(
             challengeIDGenerate: "05",
             iconChallengeGenerate: "Bawa Tas",
             thumbnailChallengeGenerate: "PlasticBags",
-            namaChallengeGenerate: "Bawa tas reusable kemana-mana",
+            namaChallengeGenerate: "Bawa tas reusable kemanapun kamu pergi",
             descriptionGenerate: """
             Penggunaan plastik sekali pakai tidak dapat dipisahkan dari kehidupan sehari-hari. Namun, dari segi produksi plastik banyak menggunakan oil dan natural gas yang tidak dapat diperbaharui.
 
@@ -153,13 +153,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Bawa Tas",
                     captionGenerate: "Bawa selalu tas reusable dan gunakan saat berbelanja")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 5,
+            penaltyGenerate: 5),
         ChallengeGenerate(
             challengeIDGenerate: "06",
             iconChallengeGenerate: "Reusable Straw",
             thumbnailChallengeGenerate: "PlasticStraw",
-            namaChallengeGenerate: "Tidak pakai sedotan atau membawa reuseable straw",
+            namaChallengeGenerate: "Tidak memakai sedotan atau gunakan reuseable straw",
             descriptionGenerate: """
             Sedotan plastik adalah suatu penemuan baru, berabad-abad yang lalu bangsa Sumerian menggunakan tabung silindris berongga untuk mencapai cairan bir di bawah fermentasi yang mereka buat di galon yang sangat besar.
 
@@ -182,8 +182,8 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Reusable Straw",
                     captionGenerate: "Pakai sedotan stainless untuk minuman kalian")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 6,
+            penaltyGenerate: 6),
         ChallengeGenerate(
             challengeIDGenerate: "07",
             iconChallengeGenerate: "reusable cuttlery",
@@ -202,13 +202,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "reusable cuttlery",
                     captionGenerate: "Bawa selalu peralatan makan untuk makanan kalian")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 6,
+            penaltyGenerate: 6),
         ChallengeGenerate(
             challengeIDGenerate: "08",
             iconChallengeGenerate: "Sort Sampah",
             thumbnailChallengeGenerate: "AuditWaste",
-            namaChallengeGenerate: "Pilah Sampah",
+            namaChallengeGenerate: "Pilah sampahmu",
             descriptionGenerate: "sampah kering dan sampah basah tidak tercampur. Jika kedua jenis sampah ini tercampur, bisa menjadi sarang bakteri dan bau tak sedap.",
             whyGenerate: [
                 WhyGenerate(
@@ -218,8 +218,8 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Sort Sampah",
                     captionGenerate: "Pisahkan sampah organik dan sampah anorganik")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 8,
+            penaltyGenerate: 8),
         ChallengeGenerate(
             challengeIDGenerate: "09",
             iconChallengeGenerate: "bento",
@@ -234,13 +234,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "bento",
                     captionGenerate: "Bawa dan pakai wadah makanan untuk beli bekal makan kalian.")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 7,
+            penaltyGenerate: 7),
         ChallengeGenerate(
             challengeIDGenerate: "10",
             iconChallengeGenerate: "Beli Barang Baru",
             thumbnailChallengeGenerate: "AuditWaste",
-            namaChallengeGenerate: "Tanya Diri Sendiri 5 kali Sebelum Membeli Barang Baru",
+            namaChallengeGenerate: "Tanya dirimu 5 kali sebelum membeli barang baru",
             descriptionGenerate: "Membeli barang baru tanpa pertimbangan merupakan salah satu kebiasaan buruk banyak orang yang dapat menyebabkan kita merasa boros, dengan membeli barang secara impulsif tanpa pertimbangan secara tidak langsung juga akan berdampak pada lingkungan.",
             whyGenerate: [
                 WhyGenerate(
@@ -262,13 +262,13 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Beli Barang Baru",
                     captionGenerate: "Bisakah kita bertanggung jawab atas sampahnya?")],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 6,
+            penaltyGenerate: 6),
         ChallengeGenerate(
             challengeIDGenerate: "11",
             iconChallengeGenerate: "bento",
             thumbnailChallengeGenerate: "FoodContainer",
-            namaChallengeGenerate: "Masak makanan kalian sendiri",
+            namaChallengeGenerate: "Masak makanan mu sendiri",
             descriptionGenerate: """
             Persentase sampah terbesar didominasi oleh sampah organik sebanyak 60% yang didalamnya termasuk sisa-sisa makanan. Terlebih lagi, tiap tahunnya sekitar 1,3 milliar ton makanan dibuang begitu saja.
             
@@ -285,40 +285,10 @@ struct Challenges {
                     iconGenerate: "bento",
                     captionGenerate: "Masak makanan sendiri dan membawa menggunakan food countainer"),
             ],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 7,
+            penaltyGenerate: 7),
         ChallengeGenerate(
             challengeIDGenerate: "12",
-            iconChallengeGenerate: "share",
-            thumbnailChallengeGenerate: "ClimateChange",
-            namaChallengeGenerate: "Share Ke Teman Kamu Mengenai Climate Change",
-            descriptionGenerate: """
-            Climate Change (perubahan iklim) adalah perubahan signifikan yang terjadi pada suhu, curah hujan, dan angin yang berlangsung dalam waktu yang cukup lama, bisa dalam satu dekade atau bahkan lebih.
-
-            Climate change memberikan berbagai dampak buruk bagi kehidupan kita di bumi, seperti kerusakan ekosistem laut, masalah kebutuhan pangan, cuaca ekstrim dan bencana alam, mengganggu kesehatan dan penyebaran penyakit, dan lain-lain.
-
-            Maka dari itu, sangat penting untuk setiap lapisan masyarakat mengetahui tentang climate change.
-            """,
-            whyGenerate: [
-                WhyGenerate(
-                    detailGenerate: "Menciptakan kesadaran bersama tentang dampak climate change yang sedang terjadi sekarang ini."),
-                WhyGenerate(
-                    detailGenerate: "Menciptakan kesadaran bersama tentang pentingnya melakukan sesuatu atau act terhadap isu yang ada, karena every single act is that matters dan make a huge difference."),
-                WhyGenerate(
-                    detailGenerate: "Memfokuskan pikiran orang bahwa hidup keberlanjutan (sustainable living) merupakan prioritas."),
-            ],
-            howGenerate: [
-                HowGenerate(
-                    iconGenerate: "share",
-                    captionGenerate: "Share informasi tentang climate change ke teman-teman kalian"),
-                HowGenerate(
-                    iconGenerate: "share",
-                    captionGenerate: "Mulai zero waste lifestyle dari diri sendiri untuk bisa menjadi contoh"),
-            ],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
-        ChallengeGenerate(
-            challengeIDGenerate: "13",
             iconChallengeGenerate: "Compost",
             thumbnailChallengeGenerate: "LeftoverFood",
             namaChallengeGenerate: "Compost",
@@ -350,10 +320,10 @@ struct Challenges {
                     iconGenerate: "Compost",
                     captionGenerate: "Jangan takut gagal atau salah, karena proses kompos sama dengan bereksperimen"),
             ],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 7,
+            penaltyGenerate: 7),
         ChallengeGenerate(
-            challengeIDGenerate: "14",
+            challengeIDGenerate: "13",
             iconChallengeGenerate: "Habiskan Makanan",
             thumbnailChallengeGenerate: "LeftoverFood",
             namaChallengeGenerate: "Habiskan Makananmu",
@@ -379,7 +349,7 @@ struct Challenges {
                     iconGenerate: "Habisin Makanan",
                     captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
-            pointRewardGenerate: 0,
-            penaltyGenerate: 0),
+            pointRewardGenerate: 5,
+            penaltyGenerate: 5),
     ]
 }
