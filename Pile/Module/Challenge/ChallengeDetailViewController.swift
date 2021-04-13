@@ -36,8 +36,15 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailCell
             cell.challenge = selectedChallenge
+            cell.delegate = self
             return cell
 
         }
+    }
+}
+
+extension ChallengeDetailViewController: ChallengeDetailViewDelegate {
+    func dismiss() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

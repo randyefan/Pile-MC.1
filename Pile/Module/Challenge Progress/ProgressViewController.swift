@@ -49,18 +49,4 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         cell.progChallenge = progressChallenge[indexPath.row]
         return cell
     }
-    
-    //MARK: - Private Function
-    // To Count Progress Bar
-    private func countProgressBar(challenge: ProgressChallenge) -> CGFloat {
-        var totalCompleted: Double = 0.0
-        for i in challenge.status {
-            if i.isCompleted {
-                totalCompleted += 1
-            }
-        }
-        
-        let count = totalCompleted / 30.0
-        return CGFloat(count)
-    }
 }
