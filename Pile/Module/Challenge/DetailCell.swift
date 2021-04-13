@@ -56,7 +56,13 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     }
 
     @IBAction func addTaskAction(_ sender: UIButton) {
-        guard let user = CoreDataManager.shared.fetchUser() else { return }
-        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+//        guard let user = CoreDataManager.shared.fetchUser() else { return }
+//        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
+        let navController = UINavigationController(rootViewController: challengesVC)
+        
+        navController.popViewController(animated: true)
+        
     }
 }

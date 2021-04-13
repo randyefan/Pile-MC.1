@@ -13,7 +13,10 @@ class HowCell: UICollectionViewCell {
 
     var how: HowGenerate? {
         didSet {
-            howDescription.text = how?.captionGenerate
+            if let filled = how {
+                howDescription.text = filled.captionGenerate
+                howImage.image = UIImage(named: filled.iconGenerate)
+            }
         }
     }
 

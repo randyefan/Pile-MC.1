@@ -57,7 +57,7 @@ struct Challenges {
                     detailGenerate: "Dengan mengetahui sampah yang kita hasilkan, kita dapat lebih tahu dan menilai hal-hal apa yang benar-benar harus kita konsumsi dan mencari alternatif tanpa sampah.")],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "audit",
+                    iconGenerate: "Audit",
                     captionGenerate: "catat dan kategorikan sampah apa yang kamu hasilkan")],
             pointRewardGenerate: 0,
             penaltyGenerate: 0),
@@ -354,7 +354,7 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "14",
-            iconChallengeGenerate: "Habiskan Makanan",
+            iconChallengeGenerate: "Habisin Makanan",
             thumbnailChallengeGenerate: "",
             namaChallengeGenerate: "Habiskan Makananmu",
             descriptionGenerate: """
@@ -376,7 +376,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "Habiskan Makanan",
+                    iconGenerate: "Habisin Makanan",
                     captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
             pointRewardGenerate: 0,

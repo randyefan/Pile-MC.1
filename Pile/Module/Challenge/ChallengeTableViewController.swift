@@ -10,7 +10,6 @@ import UIKit
 class ChallengeTableViewController: UITableViewController {
     var challenges = Challenges()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
@@ -20,6 +19,8 @@ class ChallengeTableViewController: UITableViewController {
     func setupTable() {
         title = "Challenges"
         navigationController?.navigationBar.prefersLargeTitles = true
+
+        self.tableView.register(UINib(nibName: "ChallengeCell", bundle: nil), forCellReuseIdentifier: "challengeCell")
     }
 
     // MARK: - Table view data source
@@ -29,9 +30,10 @@ class ChallengeTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Challenge", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "challengeCell", for: indexPath) as! ChallengeCell
 
-        cell.textLabel?.text = challenges.data[indexPath.row].namaChallengeGenerate
+
+        cell.challenge = challenges.data[indexPath.row]
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
 
         return cell
