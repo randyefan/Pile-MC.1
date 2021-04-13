@@ -22,19 +22,14 @@
 		61185071261AB1A80092974A /* Challenge.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185070261AB1A80092974A /* Challenge.storyboard */; };
 		61185076261AB2AE0092974A /* WelcomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61185075261AB2AE0092974A /* WelcomePage.storyboard */; };
 		6119500A261C65B00009DE71 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61195009261C65B00009DE71 /* CoreDataManager.swift */; };
-		61950E63261E981C006051D0 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E5D261E981C006051D0 /* User+CoreDataClass.swift */; };
-		61950E64261E981C006051D0 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E5E261E981C006051D0 /* User+CoreDataProperties.swift */; };
-		61950E65261E981C006051D0 /* Status+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E5F261E981C006051D0 /* Status+CoreDataClass.swift */; };
-		61950E66261E981C006051D0 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E60261E981C006051D0 /* Status+CoreDataProperties.swift */; };
-		61950E67261E981C006051D0 /* Challenge+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E61261E981C006051D0 /* Challenge+CoreDataClass.swift */; };
-		61950E68261E981C006051D0 /* Challenge+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E62261E981C006051D0 /* Challenge+CoreDataProperties.swift */; };
-		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
 		6145FB23262436D600614E38 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB1D262436D600614E38 /* User+CoreDataClass.swift */; };
 		6145FB24262436D600614E38 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB1E262436D600614E38 /* User+CoreDataProperties.swift */; };
 		6145FB25262436D600614E38 /* Challenge+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB1F262436D600614E38 /* Challenge+CoreDataClass.swift */; };
 		6145FB26262436D600614E38 /* Challenge+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB20262436D600614E38 /* Challenge+CoreDataProperties.swift */; };
 		6145FB27262436D600614E38 /* Status+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB21262436D600614E38 /* Status+CoreDataClass.swift */; };
 		6145FB28262436D600614E38 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB22262436D600614E38 /* Status+CoreDataProperties.swift */; };
+		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
+		61D3719B26258D7500A546D1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D3719A26258D7500A546D1 /* Extension.swift */; };
 		6E1E0DA2261B069F00AFEC13 /* ChallengeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */; };
 		6E1E0DA5261B07B200AFEC13 /* ChallengeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */; };
 		6E1E0E86261ED50900AFEC13 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E0E85261ED50900AFEC13 /* ImageCell.swift */; };
@@ -66,19 +61,14 @@
 		61185070261AB1A80092974A /* Challenge.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Challenge.storyboard; sourceTree = "<group>"; };
 		61185075261AB2AE0092974A /* WelcomePage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomePage.storyboard; sourceTree = "<group>"; };
 		61195009261C65B00009DE71 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		61950E5D261E981C006051D0 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61950E5E261E981C006051D0 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61950E5F261E981C006051D0 /* Status+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61950E60261E981C006051D0 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61950E61261E981C006051D0 /* Challenge+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61950E62261E981C006051D0 /* Challenge+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		6145FB1D262436D600614E38 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6145FB1E262436D600614E38 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6145FB1F262436D600614E38 /* Challenge+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6145FB20262436D600614E38 /* Challenge+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6145FB21262436D600614E38 /* Status+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6145FB22262436D600614E38 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		61D3719A26258D7500A546D1 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		6E1E0DA1261B069F00AFEC13 /* ChallengeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewController.swift; sourceTree = "<group>"; };
 		6E1E0DA4261B07B200AFEC13 /* ChallengeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDetailViewController.swift; sourceTree = "<group>"; };
 		6E1E0E85261ED50900AFEC13 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -128,6 +118,7 @@
 				61185064261AADE80092974A /* Core Data Manager */,
 				61950E6D261EA3FD006051D0 /* Custom View */,
 				61185061261AAD660092974A /* Resources */,
+				61D3719926258D7500A546D1 /* Extension */,
 				61185056261AAB730092974A /* Info.plist */,
 			);
 			path = Pile;
@@ -254,6 +245,14 @@
 			path = "Progress Bar View";
 			sourceTree = "<group>";
 		};
+		61D3719926258D7500A546D1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				61D3719A26258D7500A546D1 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		6E8B9A4026241949005DEF96 /* Collection Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +365,7 @@
 				6145FB23262436D600614E38 /* User+CoreDataClass.swift in Sources */,
 				6145FB27262436D600614E38 /* Status+CoreDataClass.swift in Sources */,
 				B76B4CCA261B34B0008DF8C3 /* TaskTableViewCell.swift in Sources */,
+				61D3719B26258D7500A546D1 /* Extension.swift in Sources */,
 				6145FB24262436D600614E38 /* User+CoreDataProperties.swift in Sources */,
 				61185050261AAB730092974A /* Pile.xcdatamodeld in Sources */,
 				6EC41262261AE9770055DB27 /* Challenge.swift in Sources */,
