@@ -62,7 +62,7 @@ struct CoreDataManager {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
         do {
             let user = try context.fetch(fetchRequest)
-            return user[0] as? User
+            return user.count == 0 ? nil : user[0] as? User
         } catch {
             print("could not fetch \(error.localizedDescription)")
             return nil
@@ -112,6 +112,7 @@ struct CoreDataManager {
         
         do {
             try context.save()
+            print("saved \(challenge.namaChallengeGenerate)")
         } catch {
             fatalError()
         }
@@ -121,21 +122,8 @@ struct CoreDataManager {
     func fetchChallengeStatusToday() -> [DailyChallenges]? {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequestStatus = NSFetchRequest<NSManagedObject>(entityName: "Status")
-        
-        // Get the current calendar with local time zone
-        var calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-
-        // Get today's beginning & end
-        let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
-        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
-        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
-
-        // Set predicate as date being today's date
-        let fromPredicate = NSPredicate(format: "date >= %@", dateFrom as NSDate)
-        let toPredicate = NSPredicate(format: "date < %@", dateTo! as NSDate)
-        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
-        fetchRequestStatus.predicate = datePredicate
+        let predicate = getPredicateForTodayInStatus()
+        fetchRequestStatus.predicate = predicate
         
         do {
             var challenges: [DailyChallenges] = []
@@ -152,16 +140,125 @@ struct CoreDataManager {
     }
     
     // Use this function to get delete challenge from home page
-    func deleteChallenge(challenge: Challenge) {
+    func deleteChallenge(status: Status) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         do {
-            context.delete(challenge)
+//            context.delete(challenge)
+            context.delete(status)
         }
         
         do {
             try context.save()
         } catch {
-            print("error to delete")
+            print("\(error.localizedDescription)")
         }
+    }
+    
+    // Call this function when we need to display progress for whole challenges in user
+    func fetchAllChallengeToProgress() -> [ProgressChallenge]? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequestChallenge = NSFetchRequest<NSManagedObject>(entityName: "Challenge")
+        
+        do {
+            var progressChallenge: [ProgressChallenge] = []
+            let challenge = try context.fetch(fetchRequestChallenge)
+            for task in challenge as! [Challenge] {
+                progressChallenge.append(ProgressChallenge(challenges: task, status: task.status?.allObjects as! [Status]))
+            }
+            return progressChallenge
+        } catch {
+            print("Could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    // Call this function when we need to fetch status from a challenge in last seven days
+    func fetchStatusForLastSevenDays(challenge: Challenge) -> [Status]? {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let fetchRequestStatus = NSFetchRequest<NSManagedObject>(entityName: "Status")
+        
+        let predicate = getPredicateLastSevenDaysInStatus(challenge: challenge)
+        fetchRequestStatus.predicate = predicate
+        do {
+            let status = try context.fetch(fetchRequestStatus)
+            return status as? [Status]
+        } catch {
+            print("could not fetch \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    // Call this function when we need to add daily status from a challenge
+    func addingDailyStatusForAChallenge(challenge: Challenge) {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        guard let statusEntity = NSEntityDescription.entity(forEntityName: "Status", in: context) else {
+            return
+        }
+        
+        let status = NSManagedObject(entity: statusEntity, insertInto: context)
+        status.setValue(Date(), forKey: "date")
+        status.setValue(true, forKey: "isCompleted")
+        status.setValue(challenge, forKey: "challenge")
+        
+        do {
+            try context.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    // Call this function when need to update status completed
+    func updateStatusCompleted(status: Status) -> Bool {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        do {
+            status.setValue(true, forKey: "isCompleted")
+            do {
+                try context.save()
+                return true
+            } catch {
+                print(error.localizedDescription)
+                return false
+            }
+        }
+    }
+    
+    
+    // MARK: - Private Predicate Function
+    private func getPredicateForTodayInStatus() -> NSCompoundPredicate {
+        // Get the current calendar with local time zone
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+
+        // Get today's beginning & end
+        let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
+        let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
+        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
+
+        // Set predicate as date being today's date
+        let fromPredicate = NSPredicate(format: "date >= %@", dateFrom as NSDate)
+        let toPredicate = NSPredicate(format: "date < %@", dateTo! as NSDate)
+        let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
+        return datePredicate
+    }
+    
+    
+    private func getPredicateLastSevenDaysInStatus(challenge: Challenge) -> NSCompoundPredicate {
+        // Get the current calendar with local time zone
+        var calendar = Calendar.current
+        calendar.timeZone = NSTimeZone.local
+        
+        let now = Date()
+        guard let sevenDaysAgo = calendar.date(byAdding: .day, value: -7, to: now) else {
+            return NSCompoundPredicate()
+        }
+        
+        let startDate = calendar.startOfDay(for: sevenDaysAgo)
+
+        // Set predicate as date being today's date
+        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+        let toPredicate = NSPredicate(format: "date < %@", now as NSDate)
+        let predicateChallenge = NSPredicate(format: "challenge == %@", challenge)
+        let dateChallengePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate, predicateChallenge])
+        return dateChallengePredicate
     }
 }
