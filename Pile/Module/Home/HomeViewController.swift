@@ -15,7 +15,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var taskListTableView: UITableView!
     @IBOutlet weak var totalEpProgressView: UIProgressView!
     @IBOutlet weak var imageSequence: UIImageView!
-
+    @IBOutlet weak var addTaskMiniButton: UIButton!
+    
     var challengesData: [DailyChallenges]?
     var userData: User?
     var imageList: [UIImage]!
@@ -86,10 +87,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         addTaskButton.layer.cornerRadius = 5.0
         if challengesData?.count == 0 {
             addTaskButton.isHidden = false
+            addTaskMiniButton.isHidden = true
             taskListTableView.isHidden = true
         } else {
             taskListTableView.reloadData()
             addTaskButton.isHidden = true
+            addTaskMiniButton.isHidden = false
             taskListTableView.isHidden = false
         }
     }
