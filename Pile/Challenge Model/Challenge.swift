@@ -324,7 +324,7 @@ struct Challenges {
             penaltyGenerate: 7),
         ChallengeGenerate(
             challengeIDGenerate: "13",
-            iconChallengeGenerate: "Habiskan Makanan",
+            iconChallengeGenerate: "Habisin Makanan",
             thumbnailChallengeGenerate: "LeftoverFood",
             namaChallengeGenerate: "Habisin Makanan",
             descriptionGenerate: """
