@@ -23,6 +23,11 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         showProgressChallenge()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        ProgressChallengeTableView.reloadData()
+    }
+    
     func setupTableView() {
         ProgressChallengeTableView.dataSource = self
         ProgressChallengeTableView.delegate = self
