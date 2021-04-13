@@ -120,14 +120,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = taskListTableView.dequeueReusableCell(withIdentifier: "challengeTitleCell") as! TaskTableViewCell
+        let status = self.challengesData?[indexPath.row].status
         cell.challengeTitleText.text = challengesData?[indexPath.row].challenges.nama
+        if status?.isCompleted == true {
+            cell.tintColor = .systemBlue
+        }else{
+            cell.tintColor = .opaqueSeparator
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
             cell.selectionStyle = .none
-            
             //if challenge is completed
             if cell.tintColor == .opaqueSeparator{
                 showCompletanceAlert(indexPath: indexPath, tableView: tableView)
