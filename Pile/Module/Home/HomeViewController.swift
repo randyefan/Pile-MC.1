@@ -24,8 +24,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var imageList: [UIImage]!
     var totalEP: Int?
     
-    var dummyChallenge = ["Hello world 1","Hello world 2","Hello world 3"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchUserData()
@@ -36,12 +34,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         print(docsDir)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        fetchUserData()
+        validateIfUserExist()
+    }
+    
     
     func fetchUserData(){
         //fetch user & challenge
         userData = CoreDataManager.shared.fetchUser()
         challengesData = CoreDataManager.shared.fetchChallengeStatusToday()
-        taskListTableView.reloadData()
     }
     
     func validateIfUserExist(){
@@ -50,6 +52,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let WelcomePageVC = WelcomePageViewController()
             WelcomePageVC.modalPresentationStyle = .fullScreen
             self.present (WelcomePageVC, animated: true, completion: nil)
+            
         }else{
             isChallengeExist()
            setUI()
@@ -83,62 +86,50 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func isChallengeExist(){
         addTaskButton.layer.cornerRadius = 5.0
-//        if challengesData?.count == 0{
-//            addTaskButton.isHidden = false
-//            taskListTableView.isHidden = true
-//            print("Nil")
-//        }else{
-//            addTaskButton.isHidden = true
-//            taskListTableView.isHidden = false
-//        }
-        addTaskButton.isHidden = true
+        if challengesData?.count == 0{
+            addTaskButton.isHidden = false
+            taskListTableView.isHidden = true
+            print("Nil")
+        }else{
+            taskListTableView.reloadData()
+            addTaskButton.isHidden = true
+            taskListTableView.isHidden = false
+        }
     }
     
  
     @IBAction func addTaskAction(_ sender: Any) {
-//        let addChallengeModal = ChallengeDetailViewController()
-//        self.present(addChallengeModal, animated: true, completion: nil)
-        
-//        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
-//        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
-//        let navController = UINavigationController(rootViewController: challengesVC)
-//        self.navigationController?.present(navController, animated: true, completion: nil)
-        
-        //dummy challenge coredata
-        let addTask = CoreDataManager.shared.addChallengeToUser(user: userData!, challenge: ChallengeGenerate(challengeIDGenerate: "001", iconChallengeGenerate: "", thumbnailChallengeGenerate: "", namaChallengeGenerate: "Hello", descriptionGenerate: "asdasd", whyGenerate: [WhyGenerate(detailGenerate: "detail challenge")], howGenerate: [HowGenerate(iconGenerate: "", captionGenerate: "1. mencuci pakaian")], pointRewardGenerate: 5, penaltyGenerate: 5))
-        
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
+        let navController = UINavigationController(rootViewController: challengesVC)
+        self.navigationController?.present(navController, animated: true, completion: nil)
         fetchUserData()
+        isChallengeExist()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return challengesData?.count ?? 0
-        //return dummyChallenge.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = taskListTableView.dequeueReusableCell(withIdentifier: "challengeTitleCell") as! TaskTableViewCell
+        let status = self.challengesData?[indexPath.row].status
         cell.challengeTitleText.text = challengesData?[indexPath.row].challenges.nama
-        //cell.challengeTitleText.text = dummyChallenge[indexPath.row]
+        if status?.isCompleted == true {
+            cell.tintColor = .systemBlue
+        }else{
+            cell.tintColor = .opaqueSeparator
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
             cell.selectionStyle = .none
-            
             //if challenge is completed
             if cell.tintColor == .opaqueSeparator{
-                cell.tintColor = .systemBlue
-                userData?.points += (challengesData?[indexPath.row].challenges.pointReward)!
-                
-                setUI()
-            }
-            //cancel completion
-            else{
-                cell.tintColor = .opaqueSeparator
-                userData?.points -= (challengesData?[indexPath.row].challenges.pointReward)!
-                
-                setUI()
+                showCompletanceAlert(indexPath: indexPath, tableView: tableView)
             }
         }
     }
@@ -150,31 +141,47 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete{ //handle delete here
-            //tableView.beginUpdates()
-            
-            guard let challenge = challengesData?[indexPath.row].challenges, let status = challengesData?[indexPath.row].status else {
-                return
-            }
-            CoreDataManager.shared.deleteChallenge(status: status)
-            challengesData?.remove(at: indexPath.row)
-           // dummyChallenge.remove(at: indexPath.row)
-            //showRemoveAlert()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-//            fetchUserData()
-            tableView.reloadData()
-            //tableView.endUpdates()
-            
+            showRemoveAlert(indexPath: indexPath, tableView: tableView)
         }
     }
     
     
     
-//    func showRemoveAlert(){
-//        let alert = UIAlertController(title: "Attention", message: "You are about to remove this challenge", preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: String?, style: <#T##UIAlertAction.Style#>, handler: <#T##((UIAlertAction) -> Void)?##((UIAlertAction) -> Void)?##(UIAlertAction) -> Void#>))
-//    }
+    func showRemoveAlert(indexPath: IndexPath, tableView: UITableView){
+        let alert = UIAlertController(title: "Attention", message: "You are about to remove this challenge", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: {action in
+            guard let challenge = self.challengesData?[indexPath.row].challenges, let status = self.challengesData?[indexPath.row].status else {
+                return
+            }
+            CoreDataManager.shared.deleteChallenge(status: status)
+            self.challengesData?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.fetchUserData()
+            self.isChallengeExist()
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
     
-
+    func showCompletanceAlert(indexPath: IndexPath, tableView: UITableView){
+        let alert = UIAlertController(title: "Attention", message: "Are you sure you already complete this task?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: {action in
+            guard let challenge = self.challengesData?[indexPath.row].challenges, let status = self.challengesData?[indexPath.row].status else {
+                return
+            }
+            CoreDataManager.shared.updateStatusCompleted(status: status)
+            
+            tableView.cellForRow(at: indexPath)?.tintColor = .systemBlue
+            self.userData?.points += (self.challengesData?[indexPath.row].challenges.pointReward)!
+            CoreDataManager.shared.updatePointUser(user: self.userData!, point: Int(self.userData!.points))
+            self.setUI()
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 
 
     
