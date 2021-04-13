@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol ChallengeDetailViewDelegate: class {
+    func fetchFromHome()
+}
+
 class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+
+    weak var delegate: ChallengeDetailViewDelegate?
     var selectedChallenge: ChallengeGenerate?
 
     override func viewDidLoad() {
@@ -30,8 +36,7 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "imageCell", for: indexPath) as! ImageCell
-
-
+            cell.imageDetail.image = UIImage(named: selectedChallenge!.thumbnailChallengeGenerate)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailCell
@@ -43,8 +48,10 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
     }
 }
 
-extension ChallengeDetailViewController: ChallengeDetailViewDelegate {
+extension ChallengeDetailViewController: DetailCellDelegate {
     func dismiss() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: {
+            self.delegate?.fetchFromHome()
+        })
     }
 }

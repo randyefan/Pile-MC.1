@@ -354,9 +354,9 @@ struct Challenges {
             penaltyGenerate: 0),
         ChallengeGenerate(
             challengeIDGenerate: "14",
-            iconChallengeGenerate: "Habiskan Makanan",
+            iconChallengeGenerate: "Habisin Makanan",
             thumbnailChallengeGenerate: "LeftoverFood",
-            namaChallengeGenerate: "Habiskan Makananmu",
+            namaChallengeGenerate: "Habisin Makanan",
             descriptionGenerate: """
             Indonesia diperkirakan menghasilkan 64 juta ton sampah tiap tahunnya. Berdasarkan data Kementrian Lingkungan Hidup dan Kehutanan (KLHK), persentase jenis sampah yang dihasilkan didominasi oleh sampah organik, yaitu mencapai 60% dari total sampah. Diikuti oleh sampah plastik sebanyak 14%, sampah kertas 9%, metal 4,3%, kaca, kayu dan bahan lainnya 12,7%. Salah satu contoh sampah organik yaitu sisa-sisa makanan.
 

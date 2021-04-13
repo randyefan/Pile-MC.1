@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ChallengeDetailViewDelegate: class {
+protocol DetailCellDelegate: class {
     func dismiss()
 }
 
@@ -20,7 +20,7 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var whyDescription: UILabel!
     @IBOutlet weak var addTaskButton: UIButton!
 
-    weak var delegate: ChallengeDetailViewDelegate?
+    weak var delegate: DetailCellDelegate?
 
     var joinWhy = ""
     var challenge: ChallengeGenerate? {
@@ -62,8 +62,8 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     }
 
     @IBAction func addTaskAction(_ sender: UIButton) {
-//        guard let user = CoreDataManager.shared.fetchUser() else { return }
-//        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+        guard let user = CoreDataManager.shared.fetchUser() else { return }
+        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
         delegate?.dismiss()
     }
 }
