@@ -18,13 +18,11 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         //Title
         title = "Your Progress"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        //Table
-        showProgressChallenge()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        showProgressChallenge()
         ProgressChallengeTableView.reloadData()
     }
     
