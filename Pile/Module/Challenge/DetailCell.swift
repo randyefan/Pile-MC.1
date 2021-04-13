@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ChallengeDetailViewDelegate: class {
+    func dismiss()
+}
+
 class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -15,6 +19,8 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     @IBOutlet weak var challengeDescription: UILabel!
     @IBOutlet weak var whyDescription: UILabel!
     @IBOutlet weak var addTaskButton: UIButton!
+
+    weak var delegate: ChallengeDetailViewDelegate?
 
     var joinWhy = ""
     var challenge: ChallengeGenerate? {
@@ -58,11 +64,6 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     @IBAction func addTaskAction(_ sender: UIButton) {
 //        guard let user = CoreDataManager.shared.fetchUser() else { return }
 //        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
-        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
-        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
-        let navController = UINavigationController(rootViewController: challengesVC)
-        
-        navController.popViewController(animated: true)
-        
+        delegate?.dismiss()
     }
 }
