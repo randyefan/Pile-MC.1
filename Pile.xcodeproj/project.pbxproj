@@ -31,6 +31,7 @@
 		6145FB27262436D600614E38 /* Status+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB21262436D600614E38 /* Status+CoreDataClass.swift */; };
 		6145FB28262436D600614E38 /* Status+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6145FB22262436D600614E38 /* Status+CoreDataProperties.swift */; };
 		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
+		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
 		61D3719B26258D7500A546D1 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D3719A26258D7500A546D1 /* Extension.swift */; };
 		618AD7E7262575CF003246DD /* ProgressDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618AD7E6262575CF003246DD /* ProgressDetailViewController.swift */; };
 		61950E75261EA4E5006051D0 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61950E74261EA4E5006051D0 /* CircularProgressBar.swift */; };
@@ -73,6 +74,7 @@
 		6145FB20262436D600614E38 /* Challenge+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6145FB21262436D600614E38 /* Status+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6145FB22262436D600614E38 /* Status+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Status+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		61950E74261EA4E5006051D0 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		61D3719A26258D7500A546D1 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		618AD7E6262575CF003246DD /* ProgressDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDetailViewController.swift; sourceTree = "<group>"; };
