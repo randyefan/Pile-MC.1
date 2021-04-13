@@ -18,9 +18,12 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         //Title
         title = "Your Progress"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
-        //Table
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         showProgressChallenge()
+        ProgressChallengeTableView.reloadData()
     }
     
     func setupTableView() {
@@ -48,5 +51,13 @@ class ProgressViewController: UIViewController, UITabBarDelegate, UITableViewDat
         let cell = ProgressChallengeTableView.dequeueReusableCell(withIdentifier: "progressCellIdentifier", for: indexPath) as! ProgressTableViewCell
         cell.progChallenge = progressChallenge[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "ChallengeProgress", bundle: nil)
+        if let detailVC = storyboard.instantiateViewController(identifier: "progressDetail") as? ProgressDetailViewController {
+            detailVC.progressChallenge = progressChallenge[indexPath.row]
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
