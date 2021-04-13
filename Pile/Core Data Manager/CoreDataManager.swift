@@ -214,6 +214,7 @@ struct CoreDataManager {
             status.setValue(true, forKey: "isCompleted")
             do {
                 try context.save()
+                print("status is updated")
                 return true
             } catch {
                 print(error.localizedDescription)
