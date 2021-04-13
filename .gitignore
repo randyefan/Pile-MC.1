@@ -106,6 +106,8 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
+.DS_Store
+
 Pile/Intro/.DS_Store
 
 *.xcuserstate

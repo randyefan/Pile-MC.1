@@ -112,6 +112,7 @@ struct CoreDataManager {
         
         do {
             try context.save()
+            print("saved \(challenge.namaChallengeGenerate)")
         } catch {
             fatalError()
         }
@@ -203,6 +204,21 @@ struct CoreDataManager {
             try context.save()
         } catch {
             fatalError()
+        }
+    }
+    
+    // Call this function when need to update status completed
+    func updateStatusCompleted(status: Status) -> Bool {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        do {
+            status.setValue(true, forKey: "isCompleted")
+            do {
+                try context.save()
+                return true
+            } catch {
+                print(error.localizedDescription)
+                return false
+            }
         }
     }
     
