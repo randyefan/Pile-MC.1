@@ -138,12 +138,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if cell.tintColor == .opaqueSeparator{
                 showCompletanceAlert(indexPath: indexPath, tableView: tableView)
             }
-            //cancel completion
-            else{
-                cell.tintColor = .opaqueSeparator
-                userData?.points -= (challengesData?[indexPath.row].challenges.pointReward)!
-                setUI()
-            }
         }
     }
     
@@ -190,6 +184,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             tableView.cellForRow(at: indexPath)?.tintColor = .systemBlue
             self.userData?.points += (self.challengesData?[indexPath.row].challenges.pointReward)!
+            CoreDataManager.shared.updatePointUser(user: self.userData!, point: Int(self.userData!.points))
             self.setUI()
             
         }))
