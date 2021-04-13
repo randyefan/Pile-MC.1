@@ -112,7 +112,6 @@ struct CoreDataManager {
         
         do {
             try context.save()
-            print("saved \(challenge.namaChallengeGenerate)")
         } catch {
             fatalError()
         }
@@ -143,7 +142,6 @@ struct CoreDataManager {
     func deleteChallenge(status: Status) {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         do {
-//            context.delete(challenge)
             context.delete(status)
         }
         
@@ -173,11 +171,11 @@ struct CoreDataManager {
     }
     
     // Call this function when we need to fetch status from a challenge in last seven days
-    func fetchStatusForLastSevenDays(challenge: Challenge) -> [Status]? {
+    func fetchStatusForAWeek(challenge: Challenge) -> [Status]? {
         let context = CoreDataManager.shared.persistentContainer.viewContext
         let fetchRequestStatus = NSFetchRequest<NSManagedObject>(entityName: "Status")
         
-        let predicate = getPredicateLastSevenDaysInStatus(challenge: challenge)
+        let predicate = getPredicateForAWeekInStatus(challenge: challenge)
         fetchRequestStatus.predicate = predicate
         do {
             let status = try context.fetch(fetchRequestStatus)
@@ -226,16 +224,12 @@ struct CoreDataManager {
     
     // MARK: - Private Predicate Function
     private func getPredicateForTodayInStatus() -> NSCompoundPredicate {
-        // Get the current calendar with local time zone
         var calendar = Calendar.current
         calendar.timeZone = NSTimeZone.local
 
-        // Get today's beginning & end
         let dateFrom = calendar.startOfDay(for: Date()) // eg. 2016-10-10 00:00:00
         let dateTo = calendar.date(byAdding: .day, value: 1, to: dateFrom)
-        // Note: Times are printed in UTC. Depending on where you live it won't print 00:00:00 but it will work with UTC times which can be converted to local time
-
-        // Set predicate as date being today's date
+    
         let fromPredicate = NSPredicate(format: "date >= %@", dateFrom as NSDate)
         let toPredicate = NSPredicate(format: "date < %@", dateTo! as NSDate)
         let datePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate])
@@ -243,23 +237,18 @@ struct CoreDataManager {
     }
     
     
-    private func getPredicateLastSevenDaysInStatus(challenge: Challenge) -> NSCompoundPredicate {
-        // Get the current calendar with local time zone
+    private func getPredicateForAWeekInStatus(challenge: Challenge) -> NSCompoundPredicate {
         var calendar = Calendar.current
-        calendar.timeZone = NSTimeZone.local
-        
-        let now = Date()
-        guard let sevenDaysAgo = calendar.date(byAdding: .day, value: -7, to: now) else {
-            return NSCompoundPredicate()
-        }
-        
-        let startDate = calendar.startOfDay(for: sevenDaysAgo)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
 
-        // Set predicate as date being today's date
-        let fromPredicate = NSPredicate(format: "date >= %@", startDate as NSDate)
+        let now = Date()
+        let startOfWeek = Date().startOfWeek(using: calendar)
+
+        let fromPredicate = NSPredicate(format: "date >= %@", startOfWeek as NSDate)
         let toPredicate = NSPredicate(format: "date < %@", now as NSDate)
         let predicateChallenge = NSPredicate(format: "challenge == %@", challenge)
         let dateChallengePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [fromPredicate, toPredicate, predicateChallenge])
         return dateChallengePredicate
+        
     }
 }
