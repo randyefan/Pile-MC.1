@@ -23,7 +23,7 @@ class alertActionViewController: UIViewController {
 
         alert.addTextField(configurationHandler: nil)
         alert.textFields![0].placeholder = "Your Name"
-
+        
         alert.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { (_) in
             print(alert.textFields![0].text!)
             let _ = CoreDataManager.shared.saveUser(name: alert.textFields![0].text!)

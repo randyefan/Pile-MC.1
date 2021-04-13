@@ -11,11 +11,30 @@ class WelcomePageViewController: UIPageViewController, UIPageViewControllerDeleg
     
     var pageControl = UIPageControl()
     
+    func newVc(viewController: String) -> UIViewController {
+        return UIStoryboard(name: "WelcomePage", bundle: nil).instantiateViewController(withIdentifier: viewController)
+    }
+    
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "introPage1"),
                 self.newVc(viewController: "introPage2"),
                 self.newVc(viewController: "introPage3")]
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.dataSource = self
+        if let firstViewController = orderedViewControllers.first {
+            setViewControllers([firstViewController],
+                               direction: .forward,
+                               animated: true,
+                               completion: nil)
+        }
+        
+        self.delegate = self
+        configurePageControl()
+    }
     
     //Function Data Source
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -65,33 +84,6 @@ class WelcomePageViewController: UIPageViewController, UIPageViewControllerDeleg
         self.pageControl.currentPage = orderedViewControllers.firstIndex(of: pageContentViewController)!
     }
     
-    
-    func newVc(viewController: String) -> UIViewController {
-        return UIStoryboard(name: "WelcomePage", bundle: nil).instantiateViewController(withIdentifier: viewController)
-    }
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.dataSource = self
-        
-        if let firstViewController = orderedViewControllers.first {
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
-        }
-        
-        
-        self.delegate = self
-        configurePageControl()
-        
-        
-    }
-    
     func configurePageControl() {
         pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
         self.pageControl.numberOfPages = orderedViewControllers.count
@@ -101,7 +93,5 @@ class WelcomePageViewController: UIPageViewController, UIPageViewControllerDeleg
         self.pageControl.currentPageIndicatorTintColor = #colorLiteral(red: 0.3243525326, green: 0.5673766136, blue: 0.4923315048, alpha: 1)
         self.view.addSubview(pageControl)
     }
-    
-    
     
 }
