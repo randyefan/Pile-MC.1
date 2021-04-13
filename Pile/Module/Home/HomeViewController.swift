@@ -8,8 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-   
+
+
 
     @IBOutlet weak var worldLevelText: UILabel!
     @IBOutlet weak var userNameText: UILabel!
@@ -49,7 +49,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func validateIfUserExist(){
         //validate is user exist
-        if userData == nil{
+        if userData == nil {
             let WelcomePageVC = WelcomePageViewController()
             WelcomePageVC.modalPresentationStyle = .fullScreen
             self.present (WelcomePageVC, animated: true, completion: nil)
@@ -73,12 +73,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.imageSequenceSetup()
         }
     }
-    
-    func imageSequenceSetup(){
+
+    func imageSequenceSetup() {
         imageList = [UIImage(named: "image-1")!,
-                                     UIImage(named: "image-2")!,
-                                     UIImage(named: "image-3")!]
-        
+                     UIImage(named: "image-2")!,
+                     UIImage(named: "image-3")!]
+
         imageSequence.contentMode = .center
         imageSequence.image = UIImage.animatedImage(with: imageList, duration: 1.0)
     }
@@ -99,8 +99,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             taskListTableView.isHidden = false
         }
     }
-    
- 
+
+
     @IBAction func addTaskAction(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
         let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
@@ -109,11 +109,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchUserData()
         isChallengeExist()
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return challengesData?.count ?? 0
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = taskListTableView.dequeueReusableCell(withIdentifier: "challengeTitleCell") as! TaskTableViewCell
         let status = self.challengesData?[indexPath.row].status

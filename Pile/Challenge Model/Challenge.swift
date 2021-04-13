@@ -346,7 +346,7 @@ struct Challenges {
             ],
             howGenerate: [
                 HowGenerate(
-                    iconGenerate: "Habiskan Makanan",
+                    iconGenerate: "Habisin Makanan",
                     captionGenerate: "Masak atau beli makanan sesuai dengan porsi makan kalian."),
             ],
             pointRewardGenerate: 5,
