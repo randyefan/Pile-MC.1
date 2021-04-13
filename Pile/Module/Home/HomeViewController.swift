@@ -103,13 +103,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        let addChallengeModal = ChallengeDetailViewController()
 //        self.present(addChallengeModal, animated: true, completion: nil)
         
-//        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
-//        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
-//        let navController = UINavigationController(rootViewController: challengesVC)
-//        self.navigationController?.present(navController, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
+        let challengesVC = storyboard.instantiateViewController(identifier: "ChallengesTable")
+        let navController = UINavigationController(rootViewController: challengesVC)
+        self.navigationController?.present(navController, animated: true, completion: nil)
         
         //dummy challenge coredata
-        let addTask = CoreDataManager.shared.addChallengeToUser(user: userData!, challenge: ChallengeGenerate(challengeIDGenerate: "001", iconChallengeGenerate: "", thumbnailChallengeGenerate: "", namaChallengeGenerate: "Hello", descriptionGenerate: "asdasd", whyGenerate: [WhyGenerate(detailGenerate: "detail challenge")], howGenerate: [HowGenerate(iconGenerate: "", captionGenerate: "1. mencuci pakaian")], pointRewardGenerate: 5, penaltyGenerate: 5))
+//        let addTask = CoreDataManager.shared.addChallengeToUser(user: userData!, challenge: ChallengeGenerate(challengeIDGenerate: "001", iconChallengeGenerate: "", thumbnailChallengeGenerate: "", namaChallengeGenerate: "Hello", descriptionGenerate: "asdasd", whyGenerate: [WhyGenerate(detailGenerate: "detail challenge")], howGenerate: [HowGenerate(iconGenerate: "", captionGenerate: "1. mencuci pakaian")], pointRewardGenerate: 5, penaltyGenerate: 5))
         fetchUserData()
         isChallengeExist()
     }
