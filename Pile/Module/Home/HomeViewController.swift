@@ -16,8 +16,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var totalEpProgressView: UIProgressView!
     @IBOutlet weak var imageSequence: UIImageView!
     @IBOutlet weak var addTaskMiniButton: UIButton!
-
-
+    
     var challenges = Challenges()
     var challengesData: [DailyChallenges]?
     var userData: User?
@@ -32,10 +31,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 }
             }
         }
+        
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 10)) {
+                self.imageSequenceSetup()
+            }
+        }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        self.imageSequenceSetup()
+        
         if(userData != nil){
             userLevel = Int((userData!.points/100) + 1)
         }
@@ -76,23 +84,46 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
 
     func setUI() {
-        DispatchQueue.main.async {
-            //display user info
             self.userLevel = Int(self.userData!.points / 100 + 1)
             self.userNameText.text = self.userData!.name
             self.worldLevelText.text = "Level \(self.userLevel!)"
             self.totalEpText.text = "\(self.userData!.points % 100)/100"
             self.totalEpProgressView.setProgress(Float(self.userData!.points % 100) / 100, animated: true)
-
+            
             //world data
-            self.imageSequenceSetup()
+            self.updateLevel()
+    }
+    
+    func updateLevel() {
+        switch userData!.points {
+        case 0...99:
+            if userLevel! != userData!.points / 100 + 1 {
+                userLevel = Int((userData!.points/100) + 1)
+            }
+        case 100...199:
+            if userLevel! != userData!.points / 100 + 1 {
+                userLevel = Int((userData!.points/100) + 1)
+            }
+        case 200...299:
+            if userLevel! != userData!.points / 100 + 1 {
+                userLevel = Int((userData!.points/100) + 1)
+            }
+        case 300...399:
+            if userLevel! != userData!.points / 100 + 1 {
+                userLevel = Int((userData!.points/100) + 1)
+            }
+        default:
+            if userLevel! != userData!.points / 100 + 1 {
+                userLevel = Int((userData!.points/100) + 1)
+            }
         }
+        
     }
 
     func imageSequenceSetup() {
         var imageList = [UIImage]()
-        switch userData!.points {
-        case 0...99:
+        switch userLevel ?? 1 {
+        case 1:
             for frame in (0...300) {
                 if frame < 10{
                     imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
@@ -102,10 +133,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
                 }
             }
-        case 100...199:
-            if userLevel! != userData!.points / 100 + 1 {
-                userLevel = Int((userData!.points/100) + 1)
-            }
+        case 2:
             for frame in (0...300) {
                 if frame < 10{
                     imageList.append(UIImage(named: "LEVEL1_00\(frame)")!)
@@ -115,10 +143,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     imageList.append(UIImage(named: "LEVEL1_\(frame)")!)
                 }
             }
-        case 200...299:
-            if userLevel! != userData!.points / 100 + 1 {
-                userLevel = Int((userData!.points/100) + 1)
-            }
+        case 3:
             for frame in (0...300) {
                 if frame < 10{
                     imageList.append(UIImage(named: "LEVEL2_00\(frame)")!)
@@ -128,10 +153,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     imageList.append(UIImage(named: "LEVEL2_\(frame)")!)
                 }
             }
-        case 300...399:
-            if userLevel! != userData!.points / 100 + 1 {
-                userLevel = Int((userData!.points/100) + 1)
-            }
+        case 4:
             for frame in (0...300) {
                 if frame < 10{
                     imageList.append(UIImage(named: "LEVEL3_00\(frame)")!)
@@ -141,10 +163,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     imageList.append(UIImage(named: "LEVEL3_\(frame)")!)
                 }
             }
-        case 400...499:
-            if userLevel! != userData!.points / 100 + 1 {
-                userLevel = Int((userData!.points/100) + 1)
-            }
+        case 5:
             for frame in (0...300) {
                 if frame < 10{
                     imageList.append(UIImage(named: "LEVEL3_00\(frame)")!)
