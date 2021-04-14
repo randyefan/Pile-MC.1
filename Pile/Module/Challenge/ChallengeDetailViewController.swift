@@ -54,8 +54,15 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
 
 extension ChallengeDetailViewController: DetailCellDelegate {
     func dismiss() {
-        self.navigationController?.dismiss(animated: true, completion: {
-            self.delegate?.fetchFromHome()
-        })
+        if isFromHome {
+            self.dismiss(animated: true) {
+                self.delegate?.fetchFromHome()
+            }
+        } else {
+            self.navigationController?.dismiss(animated: true, completion: {
+                self.delegate?.fetchFromHome()
+            })
+        }
+
     }
 }

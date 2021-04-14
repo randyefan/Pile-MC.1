@@ -177,7 +177,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDelegate {
     func fetchFromHome() {
         self.fetchChallenges()
-        self.isChallengeExist()
+        self.validateIfUserExist()
         guard let challenges = challengesData, let user = userData else {
             return
         }
