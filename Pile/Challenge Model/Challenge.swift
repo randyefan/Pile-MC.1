@@ -59,7 +59,7 @@ struct Challenges {
                 HowGenerate(
                     iconGenerate: "Audit",
                     captionGenerate: "catat dan kategorikan sampah apa yang kamu hasilkan")],
-            pointRewardGenerate: 8,
+            pointRewardGenerate: 100,
             penaltyGenerate: 8),
         ChallengeGenerate(
             challengeIDGenerate: "02",
