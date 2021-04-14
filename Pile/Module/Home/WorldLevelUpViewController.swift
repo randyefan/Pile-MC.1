@@ -16,8 +16,11 @@ class WorldLevelUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareAnimation()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        prepareAnimation()
     }
     
     private func prepareAnimation(){
@@ -46,7 +49,7 @@ class WorldLevelUpViewController: UIViewController {
         case 4:
             for frame in (0...300) {
                 if frame < 10{
-                    imageSequence.append(UIImage(named: "TRANSISI231_00\(frame)")!)
+                    imageSequence.append(UIImage(named: "TRANSISI23_00\(frame)")!)
                 }else if frame < 100 {
                     imageSequence.append(UIImage(named: "TRANSISI23_0\(frame)")!)
                 }else{
@@ -64,8 +67,16 @@ class WorldLevelUpViewController: UIViewController {
                 }
             }
         }
-        transitionImage.image = UIImage.animatedImage(with: imageSequence, duration: 10.0)
-        transitionImage.animationRepeatCount = 1
+        transitionImage.animationImages = imageSequence
+        transitionImage.animationDuration = 10.0
+        transitionImage.animationRepeatCount =  1
+        levelUpText.text = "Your world just level-up to level \(level)"
+        transitionImage.startAnimating()
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false, block: {_ in
+            self.dismiss(animated: true, completion: nil)
+        })
+        
     }
     
 
