@@ -64,7 +64,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func validateIfUserExist() {
         //validate is user exist
         if userData == nil {
-            let WelcomePageVC = WelcomePageViewController()
+            let WelcomePageVC = WelcomePageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
             WelcomePageVC.modalPresentationStyle = .fullScreen
             self.present (WelcomePageVC, animated: true, completion: nil)
 
@@ -269,7 +269,9 @@ extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDel
         }
 
         if challenges.count == 1 {
-            NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+            if !challenges[0].status.isCompleted {
+                NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+            }
         }
     }
 }
