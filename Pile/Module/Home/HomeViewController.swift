@@ -177,6 +177,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDelegate {
     func fetchFromHome() {
         self.fetchChallenges()
-        self.validateIfUserExist()
+        self.isChallengeExist()
+        guard let challenges = challengesData, let user = userData else {
+            return
+        }
+        
+        if challenges.count == 1 {
+            NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+        }
     }
 }

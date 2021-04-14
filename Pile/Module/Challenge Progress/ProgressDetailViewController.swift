@@ -39,11 +39,25 @@ class ProgressDetailViewController: UIViewController {
         } else {
             self.daysTotalLabel.text = "\(challenge.status.count) Days out of 30 Days"
         }
-        self.bestStreakLabel.text = "Your best streak: \(2)"
+        self.bestStreakLabel.text = "Your best streak: \(countBestStreak(challenge: challenge))"
         self.status = status
         dayWeeklyCollectionView.register(UINib(nibName: "DateCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dayCell")
         self.dayWeeklyCollectionView.delegate = self
         self.dayWeeklyCollectionView.dataSource = self
+    }
+    
+    private func countBestStreak(challenge: ProgressChallenge) -> Int {
+        var bestStreak = 0
+        var bestStreaks: [Int] = []
+        for i in challenge.status {
+            if i.isCompleted {
+                bestStreak += 1
+            } else {
+                bestStreak = 0
+            }
+            bestStreaks.append(bestStreak)
+        }
+        return bestStreaks.max() ?? 0
     }
 }
 
