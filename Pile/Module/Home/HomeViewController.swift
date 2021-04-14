@@ -22,7 +22,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var challengesData: [DailyChallenges]?
     var userData: User?
     var totalEP: Int?
-    var isUpdateChallenge = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,7 +185,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //handle detail challenge to complete challenge
-        isUpdateChallenge = true
         let storyboard = UIStoryboard(name: "Challenge", bundle: nil)
         let challengesVC = (storyboard.instantiateViewController(identifier: "ChallengeDetail") as? ChallengeDetailViewController)!
 
@@ -241,7 +239,7 @@ extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDel
         guard let challenges = challengesData, let user = userData else {
             return
         }
-        
+
         if challenges.count == 1 {
             NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
         }
