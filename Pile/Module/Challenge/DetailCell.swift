@@ -25,12 +25,20 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
 
     var joinWhy = ""
     var isFromHome = false
-    var challengeStatus: Status?
+    var challengeStatus: Status? {
+        didSet {
+            if challengeStatus?.isCompleted == true {
+                addTaskButton.backgroundColor = .opaqueSeparator
+                addTaskButton.isEnabled = false
+            }
+        }
+    }
     var challenge: ChallengeGenerate? {
         didSet {
             if isFromHome {
                 addTaskButton.setTitle("Complete Task", for: .normal)
             }
+            
             challengeTitle.text = challenge?.namaChallengeGenerate
             challengeDescription.text = challenge?.descriptionGenerate
             everydayPoint.text = "\((challenge?.pointRewardGenerate)!) Point / Day"
@@ -70,8 +78,14 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
 
     @IBAction func addTaskAction(_ sender: UIButton) {
         if isFromHome {
-            if let challengeStatus = challengeStatus {
+            guard let user = CoreDataManager.shared.fetchUser() else {
+                return
+            }
+            
+            if let challengeStatus = challengeStatus, challengeStatus.isCompleted != true {
+                let point: Int = Int(user.points) + Int(challenge!.pointRewardGenerate)
                 let _ = CoreDataManager.shared.updateStatusCompleted(status: challengeStatus)
+                let _ = CoreDataManager.shared.updatePointUser(user: user, point: point)
             }
         } else {
             guard let user = CoreDataManager.shared.fetchUser() else { return }
