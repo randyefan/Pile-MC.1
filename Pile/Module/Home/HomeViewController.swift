@@ -21,7 +21,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var challenges = Challenges()
     var challengesData: [DailyChallenges]?
     var userData: User?
-    var imageList: [UIImage]!
+    var imageList = [UIImage]()
     var totalEP: Int?
     
     override func viewDidLoad() {
@@ -75,12 +75,72 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func imageSequenceSetup() {
-        imageList = [UIImage(named: "image-1")!,
-                     UIImage(named: "image-2")!,
-                     UIImage(named: "image-3")!]
         
-        imageSequence.contentMode = .center
-        imageSequence.image = UIImage.animatedImage(with: imageList, duration: 1.0)
+        switch userData!.points {
+        case 0...100:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                }
+            }
+        case 101...200:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL1_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL1_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL1_\(frame)")!)
+                }
+            }
+        case 201...300:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL3_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL3_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL3_\(frame)")!)
+                }
+            }
+        case 301...400:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                }
+            }
+        case 401...500:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                }
+            }
+        default:
+            for frame in (0...300) {
+                if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                }
+            }
+        }
+        
+        imageSequence.contentMode = .scaleAspectFill
+        imageSequence.image = UIImage.animatedImage(with: imageList, duration: 10.0)
     }
     
     
