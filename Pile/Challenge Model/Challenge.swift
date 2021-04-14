@@ -44,7 +44,7 @@ struct Challenges {
             challengeIDGenerate: "01",
             iconChallengeGenerate: "Audit",
             thumbnailChallengeGenerate: "AuditWaste",
-            namaChallengeGenerate: "Audit sampah yang kamu dihasilkan",
+            namaChallengeGenerate: "Audit sampah yang kamu hasilkan",
             descriptionGenerate: """
             Untuk mengurangi sampah, challenge pertama yang perlu dilakukan yaitu mengetahui sampah apa yang kita hasilkan.
 
