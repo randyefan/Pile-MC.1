@@ -241,7 +241,9 @@ extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDel
         }
 
         if challenges.count == 1 {
-            NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+            if !challenges[0].status.isCompleted {
+                NotificationManager.shared.scheduleNotificationForReminderTask(user: user)
+            }
         }
     }
 }
