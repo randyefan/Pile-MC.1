@@ -24,11 +24,16 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     weak var delegate: DetailCellDelegate?
 
     var joinWhy = ""
+    var isFromHome = false
+    var challengeStatus: Status?
     var challenge: ChallengeGenerate? {
         didSet {
+            if isFromHome {
+                addTaskButton.setTitle("Complete Task", for: .normal)
+            }
             challengeTitle.text = challenge?.namaChallengeGenerate
             challengeDescription.text = challenge?.descriptionGenerate
-            everydayPoint.text = "\((challenge?.pointRewardGenerate)!) Point / Day" 
+            everydayPoint.text = "\((challenge?.pointRewardGenerate)!) Point / Day"
             addTaskButton.layer.cornerRadius = 5
 
             for i in 0..<(challenge?.whyGenerate.count)! {
@@ -64,8 +69,14 @@ class DetailCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewD
     }
 
     @IBAction func addTaskAction(_ sender: UIButton) {
-        guard let user = CoreDataManager.shared.fetchUser() else { return }
-        CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+        if isFromHome {
+            if let challengeStatus = challengeStatus {
+                let _ = CoreDataManager.shared.updateStatusCompleted(status: challengeStatus)
+            }
+        } else {
+            guard let user = CoreDataManager.shared.fetchUser() else { return }
+            CoreDataManager.shared.addChallengeToUser(user: user, challenge: challenge!)
+        }
         delegate?.dismiss()
     }
 }

@@ -17,6 +17,8 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
 
     weak var delegate: ChallengeDetailViewDelegate?
     var selectedChallenge: ChallengeGenerate?
+    var challengeStatus: Status?
+    var isFromHome = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +42,12 @@ class ChallengeDetailViewController: UIViewController, UITableViewDataSource, UI
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as! DetailCell
+            cell.isFromHome = isFromHome
+            cell.challengeStatus = challengeStatus
             cell.challenge = selectedChallenge
             cell.delegate = self
-            return cell
 
+            return cell
         }
     }
 }

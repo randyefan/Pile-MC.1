@@ -11,6 +11,7 @@ protocol ChallengeTableViewDelegate: class {
     func fetchFromHome()
 }
 
+
 class ChallengeTableViewController: UITableViewController {
     var challenges = Challenges()
 
