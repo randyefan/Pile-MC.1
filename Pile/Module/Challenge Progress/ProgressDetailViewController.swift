@@ -32,12 +32,18 @@ class ProgressDetailViewController: UIViewController {
         guard let challenge = progressChallenge, let status = CoreDataManager.shared.fetchStatusForAWeek(challenge: challenge.challenges) else {
             return
         }
+        var statusCompleted: [Status] = []
+        for i in status {
+            if i.isCompleted {
+                statusCompleted.append(i)
+            }
+        }
         self.navigationController?.navigationBar.prefersLargeTitles = false
-        self.progressBarLabel.progress = Float(challenge.status.count)/Float(30)
-        if challenge.status.count == 1 {
-            self.daysTotalLabel.text = "\(challenge.status.count) Day out of 30 Days"
+        self.progressBarLabel.progress = Float(statusCompleted.count)/Float(30)
+        if statusCompleted.count == 1 {
+            self.daysTotalLabel.text = "\(statusCompleted.count) Day out of 30 Days"
         } else {
-            self.daysTotalLabel.text = "\(challenge.status.count) Days out of 30 Days"
+            self.daysTotalLabel.text = "\(statusCompleted.count) Days out of 30 Days"
         }
         self.bestStreakLabel.text = "Your best streak: \(countBestStreak(challenge: challenge))"
         self.status = status

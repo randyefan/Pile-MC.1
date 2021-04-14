@@ -26,7 +26,7 @@ class NotificationManager: NSObject, UNUserNotificationCenterDelegate {
     func scheduleNotificationForReminderTask(user: User) {
         let content = UNMutableNotificationContent()
         content.title = "Reminder"
-        content.body = "Hi \(user.name ?? ""), you must have completed all your task today! Go for better environment 🥰"
+        content.body = "Hi \(user.name ?? ""), you must complete all of your tasks today! Take your part in making a better environment 🥰"
         content.sound = UNNotificationSound.default
         
 //        let date = Date()

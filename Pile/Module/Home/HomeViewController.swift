@@ -21,7 +21,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var challenges = Challenges()
     var challengesData: [DailyChallenges]?
     var userData: User?
-    var imageList = [UIImage]()
     var totalEP: Int?
     var isUpdateChallenge = false
 
@@ -66,7 +65,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DispatchQueue.main.async {
             //display user info
             self.userNameText.text = self.userData!.name
-            self.worldLevelText.text = "Level \(self.userData!.points / 100)"
+            self.worldLevelText.text = "Level \((self.userData!.points / 100) + 1)"
             self.totalEpText.text = "\(self.userData!.points % 100)/100"
             self.totalEpProgressView.setProgress(Float(self.userData!.points % 100) / 100, animated: true)
 
@@ -76,7 +75,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func imageSequenceSetup() {
-        
+        var imageList = [UIImage]()
         switch userData!.points {
         case 0...100:
             for frame in (0...300) {
@@ -101,6 +100,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         case 201...300:
             for frame in (0...300) {
                 if frame < 10{
+                    imageList.append(UIImage(named: "LEVEL2_00\(frame)")!)
+                }else if frame < 100 {
+                    imageList.append(UIImage(named: "LEVEL2_0\(frame)")!)
+                }else{
+                    imageList.append(UIImage(named: "LEVEL2_\(frame)")!)
+                }
+            }
+        case 301...400:
+            for frame in (0...300) {
+                if frame < 10{
                     imageList.append(UIImage(named: "LEVEL3_00\(frame)")!)
                 }else if frame < 100 {
                     imageList.append(UIImage(named: "LEVEL3_0\(frame)")!)
@@ -108,34 +117,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     imageList.append(UIImage(named: "LEVEL3_\(frame)")!)
                 }
             }
-        case 301...400:
-            for frame in (0...300) {
-                if frame < 10{
-                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
-                }else if frame < 100 {
-                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
-                }else{
-                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
-                }
-            }
         case 401...500:
             for frame in (0...300) {
                 if frame < 10{
-                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_00\(frame)")!)
                 }else if frame < 100 {
-                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_0\(frame)")!)
                 }else{
-                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_\(frame)")!)
                 }
             }
         default:
             for frame in (0...300) {
                 if frame < 10{
-                    imageList.append(UIImage(named: "LEVEL0_00\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_00\(frame)")!)
                 }else if frame < 100 {
-                    imageList.append(UIImage(named: "LEVEL0_0\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_0\(frame)")!)
                 }else{
-                    imageList.append(UIImage(named: "LEVEL0_\(frame)")!)
+                    imageList.append(UIImage(named: "LEVEL4_\(frame)")!)
                 }
             }
         }
@@ -238,6 +237,7 @@ extension HomeViewController: ChallengeTableViewDelegate, ChallengeDetailViewDel
     func fetchFromHome() {
         self.fetchChallenges()
         self.validateIfUserExist()
+        self.setup()
         guard let challenges = challengesData, let user = userData else {
             return
         }
